@@ -5,12 +5,14 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
+
   }
 
   render() {
     return (
       <div>
-        <h1>App.jsx</h1>
+        <h1>MVP Audio</h1>
+
       </div>
     )
   }
