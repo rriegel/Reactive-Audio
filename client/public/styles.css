@@ -1,0 +1,14 @@
+body {
+  font-family: 'Nanum Gothic', sans-serif !important;
+}
+
+.website_title {
+  font-size: 40px;
+}
+
+#app {
+  width: 90%;
+  margin: auto;
+  max-width: 960px;
+  font-family: 'Archivo', sans-serif;
+}

@@ -4,7 +4,7 @@
   "description": "Hack Reactor MVP project",
   "main": "server/index.js",
   "scripts": {
-    "build": "webpack --mode development -d -watch",
+    "build": "webpack --mode development --watch",
     "start": "nodemon"
   },
   "repository": {

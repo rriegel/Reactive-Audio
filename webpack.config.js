@@ -1,15 +1,19 @@
 const path = require('path');
+const webpack = require('webpack');
+
+const SRC_DIR = path.join(__dirname, '/client/src');
+const OUT_DIR = path.join(__dirname, '/client/dist');
 
 module.exports = {
-  entry: './client/app.jsx',
+  entry: path.join(SRC_DIR, 'app.jsx'),
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'public')
+    path: path.resolve(OUT_DIR),
+    filename: 'bundle.js'
   },
   module: {
     rules: [
       {
-        test: /.jsx?$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
       }

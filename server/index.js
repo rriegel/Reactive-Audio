@@ -6,27 +6,13 @@ const axios = require('axios');
 const app = express();
 
 app.use(bodyparser.json());
-app.use(express.static(__dirname + '/public'));
+app.use(express.static('client/public'));
 
 
 app.get('/', function (req, res) {
-  res.send('app initialized');
-  res.end();
+  console.log('app initialized');
+  res.status(200).send('SERVER TEXT')
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 let port = 8001

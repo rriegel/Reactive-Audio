@@ -7,10 +7,11 @@ class App extends React.Component {
     super(props);
 
   }
+
   render() {
     return (
       <div>
-        MVP
+        <h1>HELLO</h1>
       </div>
     )
   }
