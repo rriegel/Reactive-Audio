@@ -3,12 +3,23 @@ import ReactDOM from 'react-dom';
 import * as Tone from 'tone';
 import Sequencer from './components/Sequencer.jsx';
 
-class App extends React.Component {
+class App extends React.PureComponent {
   constructor(props) {
     super(props);
 
-    this.playTone = this.playTone.bind(this);
-    this.state = { isLoaded: false };
+
+    this.state = {
+      isLoaded: false,
+      isPlaying: false,
+      checked: [
+        [true, true, false, false, false, false, false, false],
+        [false, false, true, false, true, false, true, false],
+        [true, true, false, false, false, false, false, false],
+        [false, false, true, false, true, false, true, false]
+      ], // starting sequencer pattern
+      sequenceLength: 8,
+      BPM: 120
+    };
 
     this.sampler = new Tone.Sampler({
       urls: {
@@ -20,23 +31,36 @@ class App extends React.Component {
         this.setState({ isLoaded: true });
       }
     }).toDestination();
+
+    this.playTone = this.playTone.bind(this);
+    this.startSequencer = this.startSequencer.bind(this);
   }
 
   playTone() {
     console.log('playing BbMaj7...');
-    this.sampler.triggerAttackRelease(["Bb2", "D2", "F2", "A2"], "2n");
+    this.sampler.triggerAttackRelease(["Bb2", "D2", "F2", "A3"], "2n");
 
   }
+  startSequencer() {
+    this.setState(prevState => ({
+      isPlaying: !prevState.isPlaying
+    }), () => {
+      //console.log(this.state)
+    });
+  }
 
+  boxToggle() {
+    console.log('clicked a box!');
+  }
 
   render() {
     return (
       <div>
         <h1>MVP Audio</h1>
-        <button onClick={ () => {console.log('no start yet')} } >Start</button>
+        <button onClick={ () => {this.startSequencer()} } >Start</button>
         <button disabled={ !this.state.isLoaded } onClick={ () => {this.playTone()} } >Bb Maj7</button>
         <button onClick={ () => {console.log('no stop yet')} } >Stop</button>
-        <Sequencer />
+        <Sequencer isPlaying={ this.state.isPlaying } checked={ this.state.checked } boxToggle={ () => { this.boxToggle() } }/>
       </div>
     )
   }
