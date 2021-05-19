@@ -1,60 +1,50 @@
 import React from 'react';
 import * as Tone from 'tone';
 import SequencerRow from './SequencerRow.jsx';
+import StartAudioContext from "startaudiocontext";
+
 
 class Sequencer extends React.Component {
   constructor(props) {
     super(props);
-    this.sampler = new Tone.Sampler({
-      urls: {
-        A1: "A1.mp3",
-        A2: "A2.mp3",
-      },
-      baseUrl: "https://tonejs.github.io/audio/casio/",
-      onload: () => {
-        this.setState({ isLoaded: true });
-      }
-    });
+
+    this.state = { isLoaded: false }
 
   }
 
-  play() {
-    if (this.props.isPlaying) {
-      console.log(this.state);
-      console.log(Tone.context.state);
-      if (Tone.context.state !== 'running') {
-        Tone.start()
-        .then(success => {
-          Tone.Transport.loop = true;
-          Tone.Transport.loopStart = 0;
-          Tone.Transport.loopEnd = (this.state.sequenceLength * 30) / this.state.tempo;
-          Tone.Transport.start('+0.0');
-          console.log('playing');
-        })
-        .catch(err => console.log('error'))
+  togglePlay() {
+    console.log(Tone.Transport.state)
+    if (Tone.Transport.state === 'stopped') {
+      const notes = [
+        'C4', 'E4', 'G4',
+        'C5', 'E5', 'G5'
+      ];
+      let speed = '8n'
+      let index = 0;
+      console.log(Tone.Transport)
+      Tone.Transport.scheduleRepeat(time => {
+        repeat(time);
+      }, "8n");
 
+      let repeat = ( time ) => {
+        // console.log("index: " + index + " notes.length: " + notes.length);
+        console.log(index % notes.length)
+        let note = notes[index % notes.length];
+        //console.log(note)
+        this.props.sampler.triggerAttackRelease(note, '8n', time);
+        index++;
       }
-      const gain = new Tone.Gain(0.6);
-      gain.toDestination();
 
-      this.sampler.connect(gain);
-
-
+      Tone.Transport.start();
     } else {
-      Tone.Transport.stop()
-      Tone.Transport.loop = false;
-      Tone.Transport.loopEnd = 0;
-      console.log('stopped');
+      Tone.Transport.cancel();
+      Tone.Transport.stop();
     }
+  }
 
-  }
-  componentDidMount() {
-    this.play()
-  }
   componentDidUpdate(prevProps) {
     if (this.props.isPlaying !== prevProps.isPlaying) {
-      console.log('different props', this.props, prevProps)
-      this.play();
+      this.togglePlay();
     }
   }
   render() {

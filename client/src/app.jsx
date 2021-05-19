@@ -3,6 +3,32 @@ import ReactDOM from 'react-dom';
 import * as Tone from 'tone';
 import Sequencer from './components/Sequencer.jsx';
 
+document.addEventListener('mousedown', () => {
+  if (Tone.context.state !== 'running') Tone.context.resume();
+});
+const samplerSpecs = {
+  urls: {
+    A1: "A1.mp3",
+    A2: "A2.mp3",
+  },
+  baseUrl: "https://tonejs.github.io/audio/casio/",
+  onload: () => {
+    this.setState({
+      isLoaded: true
+    })
+  }
+};
+
+const samplers = [
+  new Tone.Sampler(samplerSpecs),
+  new Tone.Sampler(samplerSpecs),
+  new Tone.Sampler(samplerSpecs),
+  new Tone.Sampler(samplerSpecs)
+];
+samplers.forEach(sampler => sampler.toDestination());
+
+
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -28,9 +54,12 @@ class App extends React.Component {
       },
       baseUrl: "https://tonejs.github.io/audio/casio/",
       onload: () => {
-        this.setState({ isLoaded: true });
+        this.setState({
+          isLoaded: true
+        })
       }
     }).toDestination();
+
 
     this.playTone = this.playTone.bind(this);
     this.startSequencer = this.startSequencer.bind(this);
@@ -38,21 +67,18 @@ class App extends React.Component {
 
   playTone() {
     console.log('playing BbMaj7...');
-    this.sampler.triggerAttackRelease(["Bb2", "D2", "F2", "A3"], "2n");
-
+    this.sampler.triggerAttackRelease(["Bb2", "D2", "F2", "A3"], "1n");
   }
+
   startSequencer() {
     this.setState(prevState => ({
       isPlaying: !prevState.isPlaying
-    }), () => {
-      //console.log(this.state)
-    });
+    }));
   }
 
   boxToggle(row, index) {
     let newBoxToggle = this.state.checked;
     newBoxToggle[row][index] = newBoxToggle[row][index] === 0 ? 1 : 0;
-    console.log(newBoxToggle);
     this.setState({
       checked: newBoxToggle
     })
@@ -65,7 +91,12 @@ class App extends React.Component {
         <button onClick={ () => {this.startSequencer()} } >Start</button>
         <button disabled={ !this.state.isLoaded } onClick={ () => {this.playTone()} } >Bb Maj7</button>
         <button onClick={ () => {console.log('no stop yet')} } >Stop</button>
-        <Sequencer isPlaying={ this.state.isPlaying } checked={ this.state.checked } boxToggle={ (row, index) => { this.boxToggle(row, index) } }/>
+        <Sequencer
+          sampler={ this.sampler }
+          isPlaying={ this.state.isPlaying }
+          checked={ this.state.checked }
+          boxToggle={ (row, index) => {this.boxToggle(row, index)} }
+        />
       </div>
     )
   }
