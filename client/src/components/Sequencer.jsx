@@ -2,7 +2,7 @@ import React from 'react';
 import * as Tone from 'tone';
 import SequencerRow from './SequencerRow.jsx';
 
-class Sequencer extends React.PureComponent {
+class Sequencer extends React.Component {
   constructor(props) {
     super(props);
     this.sampler = new Tone.Sampler({
@@ -52,7 +52,8 @@ class Sequencer extends React.PureComponent {
     this.play()
   }
   componentDidUpdate(prevProps) {
-    if (this.props !== prevProps) {
+    if (this.props.isPlaying !== prevProps.isPlaying) {
+      console.log('different props', this.props, prevProps)
       this.play();
     }
   }

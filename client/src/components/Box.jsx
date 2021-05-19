@@ -7,7 +7,7 @@ class Box extends React.Component {
   }
   render() {
     return(
-      <td><input type='checkbox' onClick={ this.props.boxToggle }/></td>
+      <td><input type='checkbox' checked={this.props.value} onChange={ () => {this.props.boxToggle(this.props.row, this.props.i)} }/></td>
     )
   }
 };

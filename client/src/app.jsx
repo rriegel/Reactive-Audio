@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import * as Tone from 'tone';
 import Sequencer from './components/Sequencer.jsx';
 
-class App extends React.PureComponent {
+class App extends React.Component {
   constructor(props) {
     super(props);
 
@@ -12,10 +12,10 @@ class App extends React.PureComponent {
       isLoaded: false,
       isPlaying: false,
       checked: [
-        [true, true, false, false, false, false, false, false],
-        [false, false, true, false, true, false, true, false],
-        [true, true, false, false, false, false, false, false],
-        [false, false, true, false, true, false, true, false]
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0]
       ], // starting sequencer pattern
       sequenceLength: 8,
       BPM: 120
@@ -49,8 +49,13 @@ class App extends React.PureComponent {
     });
   }
 
-  boxToggle() {
-    console.log('clicked a box!');
+  boxToggle(row, index) {
+    let newBoxToggle = this.state.checked;
+    newBoxToggle[row][index] = newBoxToggle[row][index] === 0 ? 1 : 0;
+    console.log(newBoxToggle);
+    this.setState({
+      checked: newBoxToggle
+    })
   }
 
   render() {
@@ -60,7 +65,7 @@ class App extends React.PureComponent {
         <button onClick={ () => {this.startSequencer()} } >Start</button>
         <button disabled={ !this.state.isLoaded } onClick={ () => {this.playTone()} } >Bb Maj7</button>
         <button onClick={ () => {console.log('no stop yet')} } >Stop</button>
-        <Sequencer isPlaying={ this.state.isPlaying } checked={ this.state.checked } boxToggle={ () => { this.boxToggle() } }/>
+        <Sequencer isPlaying={ this.state.isPlaying } checked={ this.state.checked } boxToggle={ (row, index) => { this.boxToggle(row, index) } }/>
       </div>
     )
   }

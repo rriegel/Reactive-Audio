@@ -5,18 +5,15 @@ import * as Tone from 'tone';
 class SequencerRow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      isLoaded: false
-    };
   }
   render() {
     return(
       <tr>
-        {console.log(`row ${this.props.row}`, this.props.checked[this.props.row])}
 
-        {this.props.checked[this.props.row].map((box, index) => {
+
+        {this.props.checked[this.props.row].map((boxValue, key) => {
           return (
-            <Box key={index} boxToggle={ this.props.boxToggle } />
+            <Box i={key} value={boxValue} row={this.props.row} boxToggle={ this.props.boxToggle } />
           )
         })}
       </tr>
