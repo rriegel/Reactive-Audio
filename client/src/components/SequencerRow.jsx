@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import * as Tone from 'tone';
 
 class SequencerRow extends React.Component {

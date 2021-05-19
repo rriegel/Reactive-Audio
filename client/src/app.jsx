@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as Tone from 'tone';
-import SequencerRow from './components/SequencerRow.jsx';
+import Sequencer from './components/Sequencer.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -9,6 +9,7 @@ class App extends React.Component {
 
     this.playTone = this.playTone.bind(this);
     this.state = { isLoaded: false };
+
     this.sampler = new Tone.Sampler({
       urls: {
         A1: "A1.mp3",
@@ -22,8 +23,8 @@ class App extends React.Component {
   }
 
   playTone() {
-    console.log('playTone');
-    this.sampler.triggerAttackRelease(["Bb1", "D2", "F1", "A2"], "2n");
+    console.log('playing BbMaj7...');
+    this.sampler.triggerAttackRelease(["Bb2", "D2", "F2", "A2"], "2n");
 
   }
 
@@ -32,16 +33,10 @@ class App extends React.Component {
     return (
       <div>
         <h1>MVP Audio</h1>
+        <button onClick={ () => {console.log('no start yet')} } >Start</button>
         <button disabled={ !this.state.isLoaded } onClick={ () => {this.playTone()} } >Bb Maj7</button>
         <button onClick={ () => {console.log('no stop yet')} } >Stop</button>
-        <table id='sequencer'>
-          <tbody>
-            <SequencerRow />
-            <SequencerRow />
-            <SequencerRow />
-            <SequencerRow />
-          </tbody>
-        </table>
+        <Sequencer />
       </div>
     )
   }
