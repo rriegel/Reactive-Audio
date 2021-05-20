@@ -1,8 +1,8 @@
-# MVP-audio
+# Reactive-audio
 # Author: Ryan Riegel
 
 
-MVP Audio:
+Reactive Audio:
 Create simple melody patterns with piano notes! Save and load your projects to build inspiration.
 
 Technologies:
