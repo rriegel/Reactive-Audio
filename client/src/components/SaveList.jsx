@@ -7,13 +7,13 @@ class SaveList extends React.Component {
   }
   renderList() {
     return (
-      <ul>
+      <div className='save-list-container'>
       {this.props.saves.map((save, key) => {
         return (
           < SaveState key={key} name={save} loadSave={this.props.loadSave} deleteSave={this.props.deleteSave}/>
         )
       })}
-      </ul>
+      </div>
     )
   }
   render() {

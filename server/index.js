@@ -19,19 +19,20 @@ app.get('/savestates/:name', function (req, res) {
     .catch( error => res.status(404).send(error) );
 })
 app.delete('/savestates/:name', function (req, res) {
-  SaveState.remove({ 'name': req.params.name })
+  SaveState.deleteOne({ 'name': req.params.name })
     .then( response => res.status(200).send(response) )
     .catch( error => res.status(404).send(error) );
 })
 
 app.post('/savestates', (req, res) => {
   SaveState
-    .updateOne({
+    .updateOne({'name': req.body.name},
+    {
       'name': req.body.name,
       'pattern': req.body.pattern,
       'notes': req.body.notes,
       'octaves': req.body.octaves
-    })
+    }, {upsert: true})
     .then( response => res.status(200).send('Save Successful') )
     .catch( error => res.status(404).send(error) );
 });

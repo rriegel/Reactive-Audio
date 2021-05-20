@@ -25,3 +25,11 @@ body {
   display: flex;
   flex-direction: column;
 }
+.save-state-entry {
+  display: flex;
+  flex-direction: row;
+}
+.save-list-container {
+  display: flex;
+  flex-direction: column;
+}
