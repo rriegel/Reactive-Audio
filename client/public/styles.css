@@ -12,3 +12,16 @@ body {
   max-width: 960px;
   font-family: 'Archivo', sans-serif;
 }
+
+.sequencer-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+.sequencer {
+  padding-top: 25px;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+}
