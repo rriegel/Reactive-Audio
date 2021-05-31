@@ -9,8 +9,13 @@ Technologies:
 Mongo, Express, React, Node, Tonejs
 
 HOW TO USE:
--- HOW TO RUN
 
+-- HOW TO RUN
+Fork and Clone the repository to your local machine
+In the root directory of the repo, run the following commands concurrently:
+  1. npm run build (to bundle and minify the React code)
+  2. npm start (to start the Express server)
+Navigate to localhost:8080 in the browser of your choice
 
 -- THE SEQUENCER
 Upon loading the page, the use has access to a sequencer grid, as well as fields to enter note and octave values.
