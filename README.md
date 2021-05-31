@@ -21,7 +21,7 @@ Navigate to localhost:8001 in the browser of your choice
 
 -- THE SEQUENCER
 
-Upon loading the page, the use has access to a sequencer grid, as well as fields to enter note and octave values.
+Upon loading the page, the user has access to a sequencer grid, as well as fields to enter note and octave values.
 Press the 'Start' button to begin the sequencer and add / modify notes as you go!
 The sequencer will automatically update the pattern and notes as you edit them.
 To stop the sequencer, simply press the 'Stop' button.
