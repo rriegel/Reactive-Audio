@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import * as Tone from 'tone';
 import Sequencer from './components/Sequencer.jsx';
 import SaveList from './components/SaveList.jsx';
@@ -138,20 +137,36 @@ class App extends React.Component {
                     <td>Octave</td>
                 </tr>
                 <tr>
-                  <td><input maxLength='2' boxrow='0' type='text' value={this.state.notes[0]} onChange={ (e) => {this.changeNote(e)}}></input></td>
-                  <td><input maxLength='1' boxrow='0' type='text' value={this.state.octaves[0]} onChange={ (e) => {this.changeOctave(e)}}></input></td>
+                  <td className="input-box">
+                    <input maxLength='2' boxrow='0' type='text' value={this.state.notes[0]} onChange={ (e) => {this.changeNote(e)}}></input>
+                  </td>
+                  <td className="input-box">
+                    <input maxLength='1' boxrow='0' type='text' value={this.state.octaves[0]} onChange={ (e) => {this.changeOctave(e)}}></input>
+                  </td>
                 </tr>
                 <tr>
-                <td><input maxLength='3' boxrow='1' type='text' value={this.state.notes[1]} onChange={ (e) => {this.changeNote(e)}}></input></td>
-                <td><input maxLength='1' boxrow='1' type='text' value={this.state.octaves[1]} onChange={ (e) => {this.changeOctave(e)}}></input></td>
+                  <td className="input-box">
+                    <input maxLength='3' boxrow='1' type='text' value={this.state.notes[1]} onChange={ (e) => {this.changeNote(e)}}></input>
+                  </td>
+                  <td className="input-box">
+                    <input maxLength='1' boxrow='1' type='text' value={this.state.octaves[1]} onChange={ (e) => {this.changeOctave(e)}}></input>
+                  </td>
                 </tr>
                 <tr>
-                <td><input maxLength='3' boxrow='2' type='text' value={this.state.notes[2]} onChange={ (e) => {this.changeNote(e)}}></input></td>
-                <td><input maxLength='1' boxrow='2' type='text' value={this.state.octaves[2]} onChange={ (e) => {this.changeOctave(e)}}></input></td>
+                  <td className="input-box">
+                    <input maxLength='3' boxrow='2' type='text' value={this.state.notes[2]} onChange={ (e) => {this.changeNote(e)}}></input>
+                  </td>
+                  <td className="input-box">
+                    <input maxLength='1' boxrow='2' type='text' value={this.state.octaves[2]} onChange={ (e) => {this.changeOctave(e)}}></input>
+                  </td>
                 </tr>
                 <tr>
-                <td><input maxLength='3' boxrow='3' type='text' value={this.state.notes[3]} onChange={ (e) => {this.changeNote(e)}}></input></td>
-                <td><input maxLength='1' boxrow='3' type='text' value={this.state.octaves[3]} onChange={ (e) => {this.changeOctave(e)}}></input></td>
+                  <td className="input-box">
+                    <input maxLength='3' boxrow='3' type='text' value={this.state.notes[3]} onChange={ (e) => {this.changeNote(e)}}></input>
+                  </td>
+                  <td className="input-box">
+                    <input maxLength='1' boxrow='3' type='text' value={this.state.octaves[3]} onChange={ (e) => {this.changeOctave(e)}}></input>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -167,4 +182,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+export default App;

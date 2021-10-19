@@ -25,6 +25,13 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+.input-box {
+  padding-top: 25px;
+  height: 100px;
+  width: 100px;
+}
+
 .save-state-entry {
   display: flex;
   flex-direction: row;
