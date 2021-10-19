@@ -4,7 +4,6 @@ import * as Tone from 'tone';
 import Sequencer from './components/Sequencer.jsx';
 import SaveList from './components/SaveList.jsx';
 import axios from 'axios';
-import sampler from './components/utils/sampler.js';
 
 document.addEventListener('mousedown', () => {
   if (Tone.context.state !== 'running') Tone.context.resume();
@@ -28,8 +27,6 @@ class App extends React.Component {
       savestates: [],
       BPM: 120
     };
-
-    this.sampler = sampler;
 
     this.toggleSequencer = this.toggleSequencer.bind(this);
     this.changeNote = this.changeNote.bind(this);
@@ -129,7 +126,6 @@ class App extends React.Component {
           <Sequencer
             notes={ this.state.notes }
             octaves={ this.state.octaves }
-            sampler={ this.sampler }
             isPlaying={ this.state.isPlaying }
             checked={ this.state.checked }
             boxToggle={ (row, index) => {this.boxToggle(row, index)} }
