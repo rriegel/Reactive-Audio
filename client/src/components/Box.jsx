@@ -1,17 +1,6 @@
 import React from 'react';
 import * as Tone from 'tone';
 
-// const boxStyle = {
-//   'borderStyle': 'solid',
-//   'borderColor': 'black',
-//   'width': '100px',
-//   'height': '100px',
-// };
-
-// const checkedBoxStyle = {
-//   'backgroundColor': 'black'
-// };
-
 const hoverBoxStyle = {
  'boxShadow': '0 0 40px #5ED4F3'
 };
