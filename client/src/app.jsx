@@ -120,7 +120,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>MVP Audio</h1>
+        <h1>Reactive Audio</h1>
         <button onClick={ () => {this.toggleSequencer()} } >{this.state.isPlaying ? 'Stop' : 'Start'}</button>
         <form>
           <input id='savestate-name' type='text' placeholder='project name'></input>
@@ -163,7 +163,7 @@ class App extends React.Component {
             </table>
           </form>
         </div>
-        < SaveList
+        <SaveList
           saves={this.state.savestates}
           loadSave={(stateName) => { this.loadSave(stateName) }}
           deleteSave={(stateName) => { this.deleteSave(stateName) }}
