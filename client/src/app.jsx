@@ -4,7 +4,6 @@ import * as Tone from 'tone';
 import Sequencer from './components/Sequencer.jsx';
 import SaveList from './components/SaveList.jsx';
 import axios from 'axios';
-
 import sampler from './components/utils/sampler.js';
 
 document.addEventListener('mousedown', () => {
@@ -18,7 +17,6 @@ class App extends React.Component {
     this.state = {
       isLoaded: false,
       isPlaying: false,
-      // starting sequencer pattern
       checked: [
         [0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0],
