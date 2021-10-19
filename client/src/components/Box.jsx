@@ -41,9 +41,7 @@ class Box extends React.Component {
     return (
       <td>
         <div
-          style={
-            this.state.hover ? {...this.getBoxStyle(), ...hoverBoxStyle} : this.getBoxStyle()
-          }
+          style={ this.state.hover ? {...this.getBoxStyle(), ...hoverBoxStyle} : this.getBoxStyle() }
           onClick={ () => {this.props.boxToggle(this.props.row, this.props.i)} }
           onMouseEnter={ () => this.toggleHover() }
           onMouseLeave={ () => this.toggleHover() }>
