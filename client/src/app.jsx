@@ -5,36 +5,15 @@ import Sequencer from './components/Sequencer.jsx';
 import SaveList from './components/SaveList.jsx';
 import axios from 'axios';
 
+import sampler from './components/utils/sampler.js';
+
 document.addEventListener('mousedown', () => {
   if (Tone.context.state !== 'running') Tone.context.resume();
 });
-const samplerSpecs = {
-  urls: {
-    A1: "A1.mp3",
-    A2: "A2.mp3",
-  },
-  baseUrl: "https://tonejs.github.io/audio/casio/",
-  onload: () => {
-    this.setState({
-      isLoaded: true
-    })
-  }
-};
-
-const samplers = [
-  new Tone.Sampler(samplerSpecs),
-  new Tone.Sampler(samplerSpecs),
-  new Tone.Sampler(samplerSpecs),
-  new Tone.Sampler(samplerSpecs)
-];
-samplers.forEach(sampler => sampler.toDestination());
-
-
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-
 
     this.state = {
       isLoaded: false,
@@ -52,19 +31,7 @@ class App extends React.Component {
       BPM: 120
     };
 
-    this.sampler = new Tone.Sampler({
-      urls: {
-        A1: "A1.mp3",
-        A2: "A2.mp3",
-      },
-      baseUrl: "https://tonejs.github.io/audio/casio/",
-      onload: () => {
-        this.setState({
-          isLoaded: true
-        })
-      }
-    }).toDestination();
-
+    this.sampler = sampler;
 
     this.toggleSequencer = this.toggleSequencer.bind(this);
     this.changeNote = this.changeNote.bind(this);
@@ -104,10 +71,8 @@ class App extends React.Component {
   getSaveData() {
     axios.get('/savestates')
     .then(res => {
-      var saveEntries = []
-      res.data.forEach(save => {
-        saveEntries.push(save.name)
-      })
+      var saveEntries = [];
+      res.data.forEach(save => saveEntries.push(save.name))
       this.setState({
         savestates: saveEntries,
       });
