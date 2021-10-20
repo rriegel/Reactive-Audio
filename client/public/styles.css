@@ -17,6 +17,8 @@ code {
     width: 100%;
     max-width: 81.25em;
     min-width: 65em;
+    background-color: #282c34;
+    color: white;
   }
 }
 
@@ -51,8 +53,7 @@ code {
 }
 
 .input-box {
-  padding-top: 25px;
-  height: 100px;
+  height: 125px;
   width: 100px;
 }
 
