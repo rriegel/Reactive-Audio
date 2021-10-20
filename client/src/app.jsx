@@ -113,7 +113,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <>
         <h1 className="title">
           Reactive Audio
         </h1>
@@ -185,7 +185,7 @@ class App extends React.Component {
           loadSave={(stateName) => { this.loadSave(stateName) }}
           deleteSave={(stateName) => { this.deleteSave(stateName) }}
         />
-      </div>
+      </>
     )
   }
 }
