@@ -1,12 +1,12 @@
-# Reactive Audio 🎵🎧🎵
+# 🎵🎧🎵 Reactive Audio
 
-## Create simple melody patterns with piano notes 🎹
-### Save and load your projects to build inspiration 🤔
+## 🎹 Create simple melody patterns with piano notes
+### 🤔 Save and load your projects to build inspiration
 
 ![Header](https://github.com/rriegel/Reactive-Audio/blob/main/assets/screenshot-10242021.png "Header")
 Screenshot of UI last updated 10/24/2021
 
-## Technologies 🔨
+## 🔨 Technologies
 
 [![](https://img.shields.io/badge/ReactJS-61DAFB?logo=react&logoColor=white&style=for-the-badge)](https://reactjs.org/)
 [![](https://img.shields.io/badge/Node.js-43853D?logo=node.js&logoColor=white&style=for-the-badge)](https://nodejs.org/)
