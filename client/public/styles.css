@@ -17,8 +17,8 @@ code {
     width: 100%;
     max-width: 81.25em;
     min-width: 65em;
-    background-color: #282c34;
-    color: white;
+    background-color: white;
+    color: #282c34;
   }
 }
 
