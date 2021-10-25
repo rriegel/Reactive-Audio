@@ -1,12 +1,12 @@
 # Reactive-audio
-# Author: Ryan Riegel
+# Ryan Riegel
 
-### Create simple melody patterns with piano notes!
+### Create simple melody patterns with piano notes
 
-### Save and load your projects to build inspiration.
+### Save and load your projects to build inspiration
 
-### Screenshot of UI last updated 10/24/2021
 ![Header](https://github.com/rriegel/Reactive-Audio/blob/main/assets/screenshot-10242021.png "Header")
+Screenshot of UI last updated 10/24/2021
 
 ## Technologies:
 
