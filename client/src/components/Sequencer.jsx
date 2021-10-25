@@ -60,25 +60,21 @@ class Sequencer extends React.Component {
             checked={ this.props.checked }
             row='0'
             boxToggle={ this.props.boxToggle }
-            sampler={ sampler }
           />
           <SequencerRow
             checked={ this.props.checked }
             row='1'
             boxToggle={ this.props.boxToggle }
-            sampler={ sampler }
           />
           <SequencerRow
             checked={ this.props.checked }
             row='2'
             boxToggle={ this.props.boxToggle }
-            sampler={ sampler }
           />
           <SequencerRow
             checked={ this.props.checked }
             row='3'
             boxToggle={ this.props.boxToggle }
-            sampler={ sampler }
           />
         </tbody>
       </table>
