@@ -6,14 +6,6 @@
 ![Header](https://github.com/rriegel/Reactive-Audio/blob/main/assets/screenshot-10242021.png "Header")
 Screenshot of UI last updated 10/24/2021
 
-## 🔨 Technologies
-
-[![](https://img.shields.io/badge/ReactJS-61DAFB?logo=react&logoColor=white&style=for-the-badge)](https://reactjs.org/)
-[![](https://img.shields.io/badge/Node.js-43853D?logo=node.js&logoColor=white&style=for-the-badge)](https://nodejs.org/)
-[![](https://img.shields.io/badge/Express-FFFFFF?logo=express&logoColor=black&style=for-the-badge)](https://expressjs.com/)
-[![](https://img.shields.io/badge/MongoDB-439543?logo=mongodb&logoColor=white&style=for-the-badge)](https://www.mongodb.com/)
-[![](https://img.shields.io/badge/tone.js-F734D7?style=for-the-badge)](https://tonejs.github.io/)
-
 # HOW TO USE:
 
 ### RUN THE APP
@@ -45,3 +37,11 @@ Your project will be added to the list of projects at the bottom of the screen.
 To load a previously saved project, find it in the list and press 'Load'. This will load the last save state of that project.
 If your project name matches a previous project, it will overwrite.
 Delete a project from your list by pressing 'Delete'.
+
+## 🔨 Technologies
+
+[![](https://img.shields.io/badge/ReactJS-61DAFB?logo=react&logoColor=white&style=for-the-badge)](https://reactjs.org/)
+[![](https://img.shields.io/badge/Node.js-43853D?logo=node.js&logoColor=white&style=for-the-badge)](https://nodejs.org/)
+[![](https://img.shields.io/badge/Express-FFFFFF?logo=express&logoColor=black&style=for-the-badge)](https://expressjs.com/)
+[![](https://img.shields.io/badge/MongoDB-439543?logo=mongodb&logoColor=white&style=for-the-badge)](https://www.mongodb.com/)
+[![](https://img.shields.io/badge/tone.js-F734D7?style=for-the-badge)](https://tonejs.github.io/)
