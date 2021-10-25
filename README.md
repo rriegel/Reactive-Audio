@@ -5,6 +5,8 @@
 Reactive Audio:
 Create simple melody patterns with piano notes! Save and load your projects to build inspiration.
 
+![Header](https://github.com/rriegel/Reactive-Audio/blob/main/assets/screenshot-10242021.png "Header")
+
 Technologies:
 Mongo, Express, React, Node, Tone.js
 
