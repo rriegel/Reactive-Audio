@@ -1,5 +1,5 @@
 # Reactive-audio
-# Ryan Riegel
+Ryan Riegel
 
 ### Create simple melody patterns with piano notes
 ### Save and load your projects to build inspiration
