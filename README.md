@@ -1,12 +1,12 @@
-# Reactive-audio
+# Reactive Audio 🎵🎧🎵
 
-## Create simple melody patterns with piano notes
-### Save and load your projects to build inspiration
+## Create simple melody patterns with piano notes 🎹
+### Save and load your projects to build inspiration 🤔
 
 ![Header](https://github.com/rriegel/Reactive-Audio/blob/main/assets/screenshot-10242021.png "Header")
 Screenshot of UI last updated 10/24/2021
 
-## Technologies:
+## Technologies 🔨
 
 [![](https://img.shields.io/badge/ReactJS-61DAFB?logo=react&logoColor=white&style=for-the-badge)](https://reactjs.org/)
 [![](https://img.shields.io/badge/Node.js-43853D?logo=node.js&logoColor=white&style=for-the-badge)](https://nodejs.org/)
@@ -16,7 +16,7 @@ Screenshot of UI last updated 10/24/2021
 
 # HOW TO USE:
 
-#### HOW TO RUN
+#### RUN THE APP
 
 Fork and Clone the repository to your local machine
 In the root directory of the repo, run the following commands concurrently:
@@ -24,6 +24,7 @@ In the root directory of the repo, run the following commands concurrently:
   2. `npm start` (to start Express server)
 
 Navigate to localhost:8001 in the browser
+
 
 #### THE SEQUENCER
 
@@ -42,7 +43,5 @@ Your project will be added to the list of projects at the bottom of the screen.
 #### YOUR PROJECTS
 
 To load a previously saved project, find it in the list and press the 'Load' button. This will load the last save state of that project.
-If your project name matches a previous project, it will overwrite that project.
+If your project name matches a previous project, it will overwrite.
 Delete a project from your list by pressing the 'Delete' button
-
-
