@@ -1,16 +1,18 @@
 # Reactive-audio
 # Author: Ryan Riegel
 
-
-Create simple melody patterns with piano notes! Save and load your projects to build inspiration.
-
+### Create simple melody patterns with piano notes! Save and load your projects to build inspiration.
 
 Screenshot of UI last updated 10/24/2021
 ![Header](https://github.com/rriegel/Reactive-Audio/blob/main/assets/screenshot-10242021.png "Header")
 
 ## Technologies:
 
-Mongo, Express, React, Node, Tone.js
+[![](https://img.shields.io/badge/ReactJS-61DAFB?logo=react&logoColor=white&style=for-the-badge)](https://reactjs.org/)
+[![](https://img.shields.io/badge/Node.js-43853D?logo=node.js&logoColor=white&style=for-the-badge)](https://nodejs.org/)
+[![](https://img.shields.io/badge/Express-FFFFFF?logo=express&logoColor=black&style=for-the-badge)](https://expressjs.com/)
+[![](https://img.shields.io/badge/MongoDB-439543?logo=mongodb&logoColor=white&style=for-the-badge)](https://www.mongodb.com/)
+[![](https://img.shields.io/badge/tone.js-F734D7?style=for-the-badge)](https://tonejs.github.io/)
 
 # HOW TO USE:
 
