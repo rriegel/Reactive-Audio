@@ -16,7 +16,7 @@ Screenshot of UI last updated 10/24/2021
 
 # HOW TO USE:
 
-#### RUN THE APP
+### RUN THE APP
 
 Fork and Clone the repository to your local machine
 In the root directory of the repo, run the following commands concurrently:
@@ -26,15 +26,15 @@ In the root directory of the repo, run the following commands concurrently:
 Navigate to localhost:8001 in the browser
 
 
-#### THE SEQUENCER
+### THE SEQUENCER
 
 Upon loading the page, the user has access to a sequencer grid, as well as fields to enter note and octave values.
 Press the 'Start' button to begin the sequencer and add / modify notes as you go!
 The sequencer will automatically update the pattern and notes as you edit them.
-To stop the sequencer, simply press the 'Stop' button.
+To stop the sequencer, press the 'Stop' button.
 
 
-#### SAVE YOUR PROJECT
+### SAVE YOUR PROJECT
 
 To save your idea, give it a name in the top field, and press 'Save'.
 Your project will be added to the list of projects at the bottom of the screen.
@@ -42,6 +42,6 @@ Your project will be added to the list of projects at the bottom of the screen.
 
 #### YOUR PROJECTS
 
-To load a previously saved project, find it in the list and press the 'Load' button. This will load the last save state of that project.
+To load a previously saved project, find it in the list and press 'Load'. This will load the last save state of that project.
 If your project name matches a previous project, it will overwrite.
-Delete a project from your list by pressing the 'Delete' button
+Delete a project from your list by pressing 'Delete'.
