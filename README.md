@@ -1,9 +1,11 @@
 # Reactive-audio
 # Author: Ryan Riegel
 
-### Create simple melody patterns with piano notes! Save and load your projects to build inspiration.
+### Create simple melody patterns with piano notes!
 
-Screenshot of UI last updated 10/24/2021
+### Save and load your projects to build inspiration.
+
+### Screenshot of UI last updated 10/24/2021
 ![Header](https://github.com/rriegel/Reactive-Audio/blob/main/assets/screenshot-10242021.png "Header")
 
 ## Technologies:
@@ -20,10 +22,10 @@ Screenshot of UI last updated 10/24/2021
 
 Fork and Clone the repository to your local machine
 In the root directory of the repo, run the following commands concurrently:
-  1. `npm run build` (to bundle and minify the React code)
-  2. `npm start` (to start the Express server)
+  1. `npm run build` (to bundle and minify)
+  2. `npm start` (to start Express server)
 
-Navigate to localhost:8001 in the browser of your choice
+Navigate to localhost:8001 in the browser
 
 #### THE SEQUENCER
 
