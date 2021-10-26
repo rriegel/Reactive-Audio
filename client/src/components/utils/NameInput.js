@@ -49,10 +49,10 @@ export default function NameInput({ projectList, saveProject }) {
         <TextField
           id="name-input"
           placeholder="Project Name"
-          onFocus={handleFocus}
-          onBlur={handleBlur}
-          onChange={handleChange}
-          onKeyDown={keyPress}
+          onFocus={ handleFocus }
+          onBlur={ handleBlur }
+          onChange={ handleChange }
+          onKeyDown={ keyPress }
           error={ touched && error }
           helperText={ touched && helper() }
         />
