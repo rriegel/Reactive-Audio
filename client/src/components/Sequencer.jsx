@@ -34,9 +34,9 @@ function Sequencer({ notes, octaves, BPM, isPlaying, checked, boxToggle }) {
     }
   };
 
-  const usePrevious = (value) => {
+  const usePrevious = (val) => {
     const ref = useRef();
-    useEffect(() => ref.current = value);
+    useEffect(() => ref.current = val);
     return ref.current;
   };
   const prevPlaying = usePrevious(isPlaying);
