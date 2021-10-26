@@ -31,6 +31,7 @@ export default function NameInput({ projectList, saveProject }) {
     if (e.keyCode === 13) {
       e.preventDefault();
       saveProject(e.target.value);
+      e.target.value = "";
     }
   }
 
