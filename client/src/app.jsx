@@ -5,6 +5,7 @@ import SaveList from './components/SaveList.jsx';
 import axios from 'axios';
 import NoteSelect from './components/utils/NoteSelect.js';
 import OctaveSelect from './components/utils/OctaveSelect.js';
+import BPMSlider from './components/utils/BPMSlider.js';
 
 document.addEventListener('mousedown', () => {
   if (Tone.context.state !== 'running') Tone.context.resume();
@@ -106,6 +107,10 @@ class App extends React.Component {
     newBoxOctave[row] = octave;
     this.setState({ octaves: newBoxOctave });
   }
+  changeBPM(e) {
+    let BPM = e.target.value;
+    this.setState({ BPM: BPM });
+  }
 
   render() {
     return (
@@ -124,6 +129,7 @@ class App extends React.Component {
               <button type='submit' onClick={ (e) => {this.saveState(e)} } >Save</button>
             </form>
           </div>
+          <BPMSlider current={ this.state.BPM } changeBPM={(e) => this.changeBPM(e)}/>
         </div>
 
         <div className='sequencer-wrapper'>
