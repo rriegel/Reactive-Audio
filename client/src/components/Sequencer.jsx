@@ -8,6 +8,9 @@ function Sequencer({ notes, octaves, BPM, isPlaying, checked, boxToggle }) {
 
   const togglePlay = () => {
     if (Tone.Transport.state === 'stopped') {
+      const row0 = checked[0], row1 = checked[1], row2 = checked[2], row3 = checked[3];
+      let index = 0;
+      let speed = '8n';
 
       const repeat = (time) => {
         let note = row0[index % row0.length];
@@ -21,17 +24,9 @@ function Sequencer({ notes, octaves, BPM, isPlaying, checked, boxToggle }) {
         else index ++;
       };
 
-      const row0 = checked[0];
-      const row1 = checked[1];
-      const row2 = checked[2];
-      const row3 = checked[3];
-
-      let speed = '8n';
-      let index = 0;
       Tone.Transport.scheduleRepeat(time => { repeat(time) }, speed);
       // BPM is determined by parent state
       Tone.Transport.bpm.value = BPM;
-
       Tone.Transport.start();
     } else {
       Tone.Transport.cancel();
