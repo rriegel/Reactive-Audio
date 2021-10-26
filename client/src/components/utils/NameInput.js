@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import TextField from '@mui/material/TextField';
 
-export default function NameInput({ projectList }) {
+export default function NameInput({ projectList, saveProject }) {
 
   const [name, setName] = useState(null);
   const [touched, setTouched] = useState(false);
@@ -12,7 +12,7 @@ export default function NameInput({ projectList }) {
 
   const helper = () => {
     if (!name) {
-      return 'Name your project';
+      return 'Enter project name here';
     }
     if (projectList.indexOf(name) !== -1) {
       return `${name} already exists`;
@@ -21,7 +21,8 @@ export default function NameInput({ projectList }) {
 
   useEffect(() => { helper() }, [name]);
 
-  const handleTouch = () => setTouched(true);
+  const handleFocus = () => setTouched(true);
+  const handleBlur = () => setTouched(false);
 
   const handleChange = (e) => {
     setName(e.target.value);
@@ -29,7 +30,7 @@ export default function NameInput({ projectList }) {
   const keyPress = (e) => {
     if (e.keyCode === 13) {
       e.preventDefault();
-      console.log('value', e.target.value);
+      saveProject(e.target.value);
     }
   }
 
@@ -46,7 +47,8 @@ export default function NameInput({ projectList }) {
         <TextField
           id="name-input"
           placeholder="Project Name"
-          onFocus={handleTouch}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
           onChange={handleChange}
           onKeyDown={keyPress}
           error={ touched && error }

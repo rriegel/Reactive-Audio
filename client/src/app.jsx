@@ -55,8 +55,7 @@ class App extends React.Component {
     })
   }
   saveState(e) {
-    e.preventDefault();
-    let nameValue = document.getElementById('savestate-name').value;
+    let nameValue = e;
     let data = {
       name: nameValue,
       pattern: this.state.checked,
@@ -128,11 +127,10 @@ class App extends React.Component {
             <button onClick={ () => {this.toggleSequencer()} }>
               {this.state.isPlaying ? 'Stop' : 'Start'}
             </button>
-            <form>
-              <input id='savestate-name' type='text' placeholder='project name'></input>
-              <button type='submit' onClick={ (e) => {this.saveState(e)} } >Save</button>
-            </form>
-            <NameInput projectList = { this.state.savestates }/>
+            <NameInput
+              projectList = { this.state.savestates }
+              saveProject={(e) => {this.saveState(e)}}
+            />
           </div>
           <BPMSlider
             def={ this.state.BPM }
