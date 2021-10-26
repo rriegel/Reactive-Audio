@@ -31,7 +31,8 @@ app.post('/savestates', (req, res) => {
       'name': req.body.name,
       'pattern': req.body.pattern,
       'notes': req.body.notes,
-      'octaves': req.body.octaves
+      'octaves': req.body.octaves,
+      'BPM': req.body.BPM
     }, {upsert: true})
     .then( response => res.status(200).send('Save Successful') )
     .catch( error => res.status(404).send(error) );

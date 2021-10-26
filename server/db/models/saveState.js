@@ -3,10 +3,11 @@ const db = require('../index.js');
 mongoose.Promise = global.Promise;
 
 const saveSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  pattern: { type: Array, required: true },
-  notes: { type: Array, required: true },
-  octaves: { type: Array, required: true }
+  name: { type:String, required:true },
+  pattern: { type:Array, required:true },
+  notes: { type:Array, required:true },
+  octaves: { type:Array, required:true },
+  BPM: { type:Number, default:120, required:true }
 });
 
 const SaveState = mongoose.model('Save', saveSchema);

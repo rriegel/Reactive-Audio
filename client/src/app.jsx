@@ -27,7 +27,8 @@ class App extends React.Component {
       notes: ['A', 'F', 'D', 'A#'],
       octaves: ['2', '2', '2', '1'],
       savestates: [],
-      BPM: 120
+      BPM: 120,
+      adjBPM: 120
     };
 
     this.toggleSequencer = this.toggleSequencer.bind(this);
@@ -40,7 +41,9 @@ class App extends React.Component {
       this.setState({
         checked: res.data[0].pattern,
         notes: res.data[0].notes,
-        octaves: res.data[0].octaves
+        octaves: res.data[0].octaves,
+        BPM: res.data[0].BPM,
+        adjBPM: res.data[0].BPM
       })
     });
   }
@@ -57,7 +60,8 @@ class App extends React.Component {
       name: nameValue,
       pattern: this.state.checked,
       notes: this.state.notes,
-      octaves: this.state.octaves
+      octaves: this.state.octaves,
+      BPM: this.state.BPM
     }
     axios.post('/savestates', data)
     .then(() => {
@@ -108,8 +112,7 @@ class App extends React.Component {
     this.setState({ octaves: newBoxOctave });
   }
   changeBPM(e) {
-    let BPM = e.target.value;
-    this.setState({ BPM: BPM });
+    this.setState({ adjBPM: e.target.value });
   }
 
   render() {
@@ -129,14 +132,18 @@ class App extends React.Component {
               <button type='submit' onClick={ (e) => {this.saveState(e)} } >Save</button>
             </form>
           </div>
-          <BPMSlider current={ this.state.BPM } changeBPM={(e) => this.changeBPM(e)}/>
+          <BPMSlider
+            def={ this.state.BPM }
+            current={ this.state.adjBPM }
+            changeBPM={(e) => this.changeBPM(e)}
+          />
         </div>
 
         <div className='sequencer-wrapper'>
           <Sequencer
             notes={ this.state.notes }
             octaves={ this.state.octaves }
-            BPM={ this.state.BPM }
+            BPM={ this.state.adjBPM }
             isPlaying={ this.state.isPlaying }
             checked={ this.state.checked }
             boxToggle={ (row, index) => {this.boxToggle(row, index)} }
