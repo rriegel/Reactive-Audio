@@ -6,6 +6,7 @@ import axios from 'axios';
 import NoteSelect from './components/utils/NoteSelect.js';
 import OctaveSelect from './components/utils/OctaveSelect.js';
 import BPMSlider from './components/utils/BPMSlider.js';
+import NameInput from './components/utils/NameInput.js';
 
 document.addEventListener('mousedown', () => {
   if (Tone.context.state !== 'running') Tone.context.resume();
@@ -131,6 +132,7 @@ class App extends React.Component {
               <input id='savestate-name' type='text' placeholder='project name'></input>
               <button type='submit' onClick={ (e) => {this.saveState(e)} } >Save</button>
             </form>
+            <NameInput projectList = { this.state.savestates }/>
           </div>
           <BPMSlider
             def={ this.state.BPM }
