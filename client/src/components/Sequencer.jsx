@@ -49,26 +49,10 @@ function Sequencer({ notes, octaves, BPM, isPlaying, checked, boxToggle }) {
   return (
     <table className='sequencer'>
       <tbody>
-        <SequencerRow
-          checked={ checked }
-          row='0'
-          boxToggle={ boxToggle }
-        />
-        <SequencerRow
-          checked={ checked }
-          row='1'
-          boxToggle={ boxToggle }
-        />
-        <SequencerRow
-          checked={ checked }
-          row='2'
-          boxToggle={ boxToggle }
-        />
-        <SequencerRow
-          checked={ checked }
-          row='3'
-          boxToggle={ boxToggle }
-        />
+        <SequencerRow checked={ checked } row='0' boxToggle={ boxToggle } />
+        <SequencerRow checked={ checked } row='1' boxToggle={ boxToggle } />
+        <SequencerRow checked={ checked } row='2' boxToggle={ boxToggle } />
+        <SequencerRow checked={ checked } row='3' boxToggle={ boxToggle } />
       </tbody>
     </table>
   )
