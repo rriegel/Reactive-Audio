@@ -15,7 +15,7 @@ class Sequencer extends React.Component {
   togglePlay() {
     if (Tone.Transport.state === 'stopped') {
 
-      const repeat = ( time ) => {
+      const repeat = (time) => {
         let note = row0[index % row0.length];
         // trigger sampler to conditionally play note
         row0[index] === 1 ? sampler.triggerAttackRelease(`${this.props.notes[0]}${this.props.octaves[0]}`, '8n', time) : null;
@@ -32,9 +32,11 @@ class Sequencer extends React.Component {
       const row2 = this.props.checked[2];
       const row3 = this.props.checked[3];
 
-      let speed = '8n'
+      let speed = '8n';
       let index = 0;
       Tone.Transport.scheduleRepeat(time => { repeat(time) }, speed);
+
+      Tone.Transport.bpm.value = this.props.BPM;
 
       Tone.Transport.start();
     } else {

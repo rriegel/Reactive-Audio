@@ -3,6 +3,8 @@ import * as Tone from 'tone';
 import Sequencer from './components/Sequencer.jsx';
 import SaveList from './components/SaveList.jsx';
 import axios from 'axios';
+import NoteSelect from './components/utils/NoteSelect.js';
+import OctaveSelect from './components/utils/OctaveSelect.js';
 
 document.addEventListener('mousedown', () => {
   if (Tone.context.state !== 'running') Tone.context.resume();
@@ -21,7 +23,7 @@ class App extends React.Component {
         [0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0]
       ],
-      notes: ['A', 'F', 'D', 'Bb'],
+      notes: ['A', 'F', 'D', 'A#'],
       octaves: ['2', '2', '2', '1'],
       savestates: [],
       BPM: 120
@@ -92,23 +94,17 @@ class App extends React.Component {
   }
   changeNote(e) {
     let note = e.target.value;
-    let row = e.target.attributes.boxrow.value;
-
+    let row = e.target.name;
     let newBoxNote = this.state.notes;
     newBoxNote[row] = note;
-    this.setState({
-      notes: newBoxNote
-    })
+    this.setState({ notes: newBoxNote });
   }
   changeOctave(e) {
     let octave = e.target.value;
-    let row = e.target.attributes.boxrow.value;
-
+    let row = e.target.name;
     let newBoxOctave = this.state.octaves;
     newBoxOctave[row] = octave;
-    this.setState({
-      octaves: newBoxOctave
-    })
+    this.setState({ octaves: newBoxOctave });
   }
 
   render() {
@@ -141,39 +137,35 @@ class App extends React.Component {
             <table>
               <tbody>
                 <tr>
-                    <td>Note</td>
-                    <td>Octave</td>
-                </tr>
-                <tr>
                   <td className="input-box">
-                    <input maxLength='2' boxrow='0' type='text' value={this.state.notes[0]} onChange={ (e) => {this.changeNote(e)}}></input>
+                    <NoteSelect boxrow='0' note={this.state.notes[0]} changeNote={ (e) => this.changeNote(e) }/>
                   </td>
                   <td className="input-box">
-                    <input maxLength='1' boxrow='0' type='text' value={this.state.octaves[0]} onChange={ (e) => {this.changeOctave(e)}}></input>
+                    <OctaveSelect boxrow='0' octave={this.state.octaves[0]} changeOctave={ (e) => {this.changeOctave(e)}}/>
                   </td>
                 </tr>
                 <tr>
                   <td className="input-box">
-                    <input maxLength='3' boxrow='1' type='text' value={this.state.notes[1]} onChange={ (e) => {this.changeNote(e)}}></input>
+                    <NoteSelect boxrow='1' note={this.state.notes[1]} changeNote={ (e) => this.changeNote(e) }/>
                   </td>
                   <td className="input-box">
-                    <input maxLength='1' boxrow='1' type='text' value={this.state.octaves[1]} onChange={ (e) => {this.changeOctave(e)}}></input>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="input-box">
-                    <input maxLength='3' boxrow='2' type='text' value={this.state.notes[2]} onChange={ (e) => {this.changeNote(e)}}></input>
-                  </td>
-                  <td className="input-box">
-                    <input maxLength='1' boxrow='2' type='text' value={this.state.octaves[2]} onChange={ (e) => {this.changeOctave(e)}}></input>
+                    <OctaveSelect boxrow='1' octave={this.state.octaves[1]} changeOctave={ (e) => {this.changeOctave(e)}}/>
                   </td>
                 </tr>
                 <tr>
                   <td className="input-box">
-                    <input maxLength='3' boxrow='3' type='text' value={this.state.notes[3]} onChange={ (e) => {this.changeNote(e)}}></input>
+                    <NoteSelect boxrow='2' note={this.state.notes[2]} changeNote={ (e) => this.changeNote(e) }/>
                   </td>
                   <td className="input-box">
-                    <input maxLength='1' boxrow='3' type='text' value={this.state.octaves[3]} onChange={ (e) => {this.changeOctave(e)}}></input>
+                    <OctaveSelect boxrow='2' octave={this.state.octaves[2]} changeOctave={ (e) => {this.changeOctave(e)}}/>
+                  </td>
+                </tr>
+                <tr>
+                  <td className="input-box">
+                    <NoteSelect boxrow='3' note={this.state.notes[3]} changeNote={ (e) => this.changeNote(e) }/>
+                  </td>
+                  <td className="input-box">
+                    <OctaveSelect boxrow='3' octave={this.state.octaves[3]} changeOctave={ (e) => {this.changeOctave(e)}}/>
                   </td>
                 </tr>
               </tbody>
