@@ -28,7 +28,8 @@ export default function NameInput({ projectList, saveProject }) {
     setName(e.target.value);
   }
   const keyPress = (e) => {
-    if (e.keyCode === 13) {
+    const enter = 13;
+    if (e.keyCode === enter) {
       e.preventDefault();
       saveProject(e.target.value);
       e.target.value = "";
