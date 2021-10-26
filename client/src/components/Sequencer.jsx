@@ -14,17 +14,8 @@ class Sequencer extends React.Component {
 
   togglePlay() {
     if (Tone.Transport.state === 'stopped') {
-      const row0 = this.props.checked[0];
-      const row1 = this.props.checked[1];
-      const row2 = this.props.checked[2];
-      const row3 = this.props.checked[3];
-      let speed = '8n'
-      let index = 0;
-      Tone.Transport.scheduleRepeat(time => {
-        repeat(time);
-      }, speed);
 
-      let repeat = ( time ) => {
+      const repeat = ( time ) => {
         let note = row0[index % row0.length];
         // trigger sampler to conditionally play note
         row0[index] === 1 ? sampler.triggerAttackRelease(`${this.props.notes[0]}${this.props.octaves[0]}`, '8n', time) : null;
@@ -32,13 +23,18 @@ class Sequencer extends React.Component {
         row2[index] === 1 ? sampler.triggerAttackRelease(`${this.props.notes[2]}${this.props.octaves[2]}`, '8n', time) : null;
         row3[index] === 1 ? sampler.triggerAttackRelease(`${this.props.notes[3]}${this.props.octaves[3]}`, '8n', time) : null;
         // make sure index stays within bounds
-        if (index === row0.length - 1) {
-          index = 0
-        } else {
-          index++;
-        }
+        if (index === row0.length - 1) index = 0
+        else index ++;
+      };
 
-      }
+      const row0 = this.props.checked[0];
+      const row1 = this.props.checked[1];
+      const row2 = this.props.checked[2];
+      const row3 = this.props.checked[3];
+
+      let speed = '8n'
+      let index = 0;
+      Tone.Transport.scheduleRepeat(time => { repeat(time) }, speed);
 
       Tone.Transport.start();
     } else {
