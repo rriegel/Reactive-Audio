@@ -110,18 +110,20 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1 className="title">
-          Reactive Audio
-        </h1>
 
-        <div className="top-buttons">
-          <button onClick={ () => {this.toggleSequencer()} }>
-            {this.state.isPlaying ? 'Stop' : 'Start'}
-          </button>
-          <form>
-            <input id='savestate-name' type='text' placeholder='project name'></input>
-            <button type='submit' onClick={ (e) => {this.saveState(e)} } >Save</button>
-          </form>
+        <div className="menu-bar">
+          <h1 className="title">
+            Reactive Audio
+          </h1>
+          <div className="top-buttons">
+            <button onClick={ () => {this.toggleSequencer()} }>
+              {this.state.isPlaying ? 'Stop' : 'Start'}
+            </button>
+            <form>
+              <input id='savestate-name' type='text' placeholder='project name'></input>
+              <button type='submit' onClick={ (e) => {this.saveState(e)} } >Save</button>
+            </form>
+          </div>
         </div>
 
         <div className='sequencer-wrapper'>
