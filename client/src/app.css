@@ -9,15 +9,9 @@
   width: 20%;
   margin: 0 auto;
 }
-
 .sequencer-wrapper {
   display: flex;
   flex-direction: row;
-}
-
-.form-wrapper {
-  display: flex;
-  flex-direction: column;
 }
 .input-row {
   display: flex;

@@ -151,7 +151,7 @@ class App extends React.Component {
             checked={ this.state.checked }
             boxToggle={ (row, index) => this.boxToggle(row, index) }
           />
-          <form className='form-wrapper'>
+          <form>
             <table>
               <tbody>
                 {this.state.checked.map((row, key) => (
