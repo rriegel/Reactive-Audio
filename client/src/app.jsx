@@ -135,7 +135,7 @@ class App extends React.Component {
           </div>
           <BPMSlider
             def={ this.state.BPM }
-            name={ this.state.name }
+            name={ this.state.name || "" }
             current={ this.state.adjBPM }
             changeBPM={(e) => this.changeBPM(e)}
           />
@@ -154,17 +154,17 @@ class App extends React.Component {
             <table>
               <tbody>
                 {this.state.checked.map((row, key) => (
-                  <tr>
+                  <tr key={ key }>
                     <td className="input-box">
                       <NoteSelect
-                        boxrow={ key }
+                        boxrow={ key+"" }
                         note={ this.state.notes[key] }
                         changeNote={ (e) => this.changeNote(e) }
                       />
                     </td>
                     <td className="input-box">
                       <OctaveSelect
-                        boxrow={ key }
+                        boxrow={ key+"" }
                         octave={ this.state.octaves[key] }
                         changeOctave={ (e) => this.changeOctave(e) }
                       />
