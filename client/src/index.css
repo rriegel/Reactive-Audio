@@ -8,8 +8,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 @media screen and (max-width: 1280px) {
@@ -25,43 +24,4 @@ code {
 #app {
   width: 90%;
   margin: auto;
-}
-
-.title {
-  width: 20%;
-  margin: 0 auto;
-  font-size: 40px;
-}
-.top-buttons {
-  display: flex;
-  flex-direction: row;
-  width: 20%;
-  margin: 0 auto;
-}
-
-.sequencer-wrapper {
-  display: flex;
-  flex-direction: row;
-}
-
-.form-wrapper {
-  display: flex;
-  flex-direction: column;
-}
-.input-row {
-  display: flex;
-  flex-direction: row;
-  height: 110px;
-  width: 100px;
-}
-.save-state-entry {
-  display: flex;
-  flex-direction: row;
-}
-.save-list-container {
-  display: flex;
-  flex-direction: column;
-}
-input {
-  text-align: center;
 }

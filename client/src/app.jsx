@@ -1,4 +1,5 @@
 import React from 'react';
+import './app.css';
 import * as Tone from 'tone';
 import Sequencer from './components/Sequencer.jsx';
 import SaveList from './components/SaveList.jsx';
