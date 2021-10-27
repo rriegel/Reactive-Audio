@@ -1,5 +1,7 @@
 import * as Tone from 'tone';
 
+const limiter = new Tone.Limiter(-20).toDestination();
+
 const sampler = new Tone.Sampler({
   urls: {
     A1: "A1.mp3",
@@ -11,6 +13,6 @@ const sampler = new Tone.Sampler({
       isLoaded: true
     })
   }
-}).toDestination();
+}).connect(limiter);
 
 export default sampler;
