@@ -18,6 +18,7 @@ class App extends React.Component {
 
     this.state = {
       isPlaying: false,
+      name: null,
       checked: [
         [0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0],
@@ -39,6 +40,7 @@ class App extends React.Component {
     axios.get(`/savestates/${saveName}`)
     .then(res => {
       this.setState({
+        name: res.data[0].name,
         checked: res.data[0].pattern,
         notes: res.data[0].notes,
         octaves: res.data[0].octaves,
@@ -133,6 +135,7 @@ class App extends React.Component {
           </div>
           <BPMSlider
             def={ this.state.BPM }
+            name={ this.state.name }
             current={ this.state.adjBPM }
             changeBPM={(e) => this.changeBPM(e)}
           />
@@ -150,7 +153,7 @@ class App extends React.Component {
           <form className='form-wrapper'>
             <table>
               <tbody>
-                {this.state.checked.map((key) => (
+                {this.state.checked.map((row, key) => (
                   <tr>
                     <td className="input-box">
                       <NoteSelect
