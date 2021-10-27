@@ -12,7 +12,7 @@ export default function BPMSlider({ def, name, current, changeBPM }) {
       <Slider
         key={`slider-${name + def}`}
         defaultValue={def}
-        valueLabelDisplay="on"
+        valueLabelDisplay="auto"
         step={1}
         min={50}
         max={200}
