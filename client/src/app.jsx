@@ -17,7 +17,6 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      isLoaded: false,
       isPlaying: false,
       checked: [
         [0, 0, 0, 0, 0, 0, 0, 0],
@@ -61,7 +60,7 @@ class App extends React.Component {
       pattern: this.state.checked,
       notes: this.state.notes,
       octaves: this.state.octaves,
-      BPM: this.state.BPM
+      BPM: this.state.adjBPM
     }
     axios.post('/savestates', data)
     .then(() => {
