@@ -1,5 +1,5 @@
 import React from 'react';
-import Box from './Box.jsx';
+import GridBox from './GridBox.jsx';
 import * as Tone from 'tone';
 
 function SequencerRow({checked, row, boxToggle}) {
@@ -7,7 +7,7 @@ function SequencerRow({checked, row, boxToggle}) {
     <tr>
       {checked[row].map((boxValue, key) => {
         return (
-          <Box key={ key } i={ key } value={ boxValue } row={ row } boxToggle={ boxToggle } />
+          <GridBox key={ key } i={ key } value={ boxValue } row={ row } boxToggle={ boxToggle } />
         )
       })}
     </tr>
