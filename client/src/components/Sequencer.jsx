@@ -1,8 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import SequencerRow from './SequencerRow.jsx';
 import togglePlay from './utils/togglePlay.js';
 
 function Sequencer({ notes, octaves, BPM, isPlaying, checked, boxToggle }) {
+
+  const [active, setActive] = useState(null);
 
   const usePrevious = (val) => {
     const ref = useRef();
@@ -12,7 +14,7 @@ function Sequencer({ notes, octaves, BPM, isPlaying, checked, boxToggle }) {
   const prevPlaying = usePrevious(isPlaying);
   useEffect(() => {
     if (prevPlaying !== undefined && isPlaying !== prevPlaying) {
-      togglePlay(notes, octaves, BPM, checked);
+      togglePlay(notes, octaves, BPM, checked, setActive);
     }
   }, [isPlaying]);
 

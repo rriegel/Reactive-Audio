@@ -2,7 +2,7 @@ import * as Tone from 'tone';
 import sampler from './sampler.js';
 import StartAudioContext from "startaudiocontext";
 
-export default function togglePlay(notes, octaves, BPM, checked) {
+export default function togglePlay(notes, octaves, BPM, checked, setActive) {
   if (Tone.Transport.state === 'stopped') {
     const row0 = checked[0], row1 = checked[1], row2 = checked[2], row3 = checked[3];
     let index = 0;
@@ -17,7 +17,7 @@ export default function togglePlay(notes, octaves, BPM, checked) {
       row2[index] === 1 ? sampler.triggerAttackRelease(`${notes[2]}${octaves[2]}`, '8n', time) : null;
       row3[index] === 1 ? sampler.triggerAttackRelease(`${notes[3]}${octaves[3]}`, '8n', time) : null;
       // make sure index stays within bounds
-      console.log(index);
+      setActive(index);
       if (index === row0.length - 1) index = 0
       else index ++;
     };
@@ -29,5 +29,6 @@ export default function togglePlay(notes, octaves, BPM, checked) {
   } else {
     Tone.Transport.cancel();
     Tone.Transport.stop();
+    setActive(null);
   }
 };
