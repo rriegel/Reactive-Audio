@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import './Sequencer.css';
 import SequencerRow from './SequencerRow.jsx';
 import togglePlay from './utils/togglePlay.js';
 
