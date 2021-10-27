@@ -2,7 +2,7 @@ import * as Tone from 'tone';
 
 const limiter = new Tone.Limiter(-20).toDestination();
 
-const gainNode = new Tone.Gain(0.8).connect(limiter);
+const gainNode = new Tone.Gain(0.6).connect(limiter);
 
 const casio = new Tone.Sampler({
   urls: {
