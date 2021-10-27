@@ -151,67 +151,24 @@ class App extends React.Component {
           <form className='form-wrapper'>
             <table>
               <tbody>
-                <tr>
-                  <td className="input-box">
-                    <NoteSelect
-                      boxrow='0'
-                      note={ this.state.notes[0] }
-                      changeNote={ (e) => this.changeNote(e) }
-                    />
-                  </td>
-                  <td className="input-box">
-                    <OctaveSelect
-                      boxrow='0'
-                      octave={ this.state.octaves[0] }
-                      changeOctave={ (e) => this.changeOctave(e) }
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <td className="input-box">
-                    <NoteSelect
-                      boxrow='1'
-                      note={ this.state.notes[1] }
-                      changeNote={ (e) => this.changeNote(e) }
-                    />
-                  </td>
-                  <td className="input-box">
-                    <OctaveSelect
-                      boxrow='1'
-                      octave={ this.state.octaves[1] }
-                      changeOctave={ (e) => this.changeOctave(e) }
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <td className="input-box">
-                    <NoteSelect
-                    boxrow='2'
-                    note={ this.state.notes[2] }
-                    changeNote={ (e) => this.changeNote(e) }/>
-                  </td>
-                  <td className="input-box">
-                    <OctaveSelect
-                      boxrow='2'
-                      octave={ this.state.octaves[2] }
-                      changeOctave={ (e) => this.changeOctave(e) }/>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="input-box">
-                    <NoteSelect
-                      boxrow='3'
-                      note={ this.state.notes[3] }
-                      changeNote={ (e) => this.changeNote(e) }/>
-                  </td>
-                  <td className="input-box">
-                    <OctaveSelect
-                      boxrow='3'
-                      octave={ this.state.octaves[3] }
-                      changeOctave={ (e) => this.changeOctave(e) }
-                    />
-                  </td>
-                </tr>
+                {this.state.checked.map((key) => (
+                  <tr>
+                    <td className="input-box">
+                      <NoteSelect
+                        boxrow={ key }
+                        note={ this.state.notes[key] }
+                        changeNote={ (e) => this.changeNote(e) }
+                      />
+                    </td>
+                    <td className="input-box">
+                      <OctaveSelect
+                        boxrow={ key }
+                        octave={ this.state.octaves[key] }
+                        changeOctave={ (e) => this.changeOctave(e) }
+                      />
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </form>
