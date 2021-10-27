@@ -17,6 +17,7 @@ export default function togglePlay(notes, octaves, BPM, checked) {
       row2[index] === 1 ? sampler.triggerAttackRelease(`${notes[2]}${octaves[2]}`, '8n', time) : null;
       row3[index] === 1 ? sampler.triggerAttackRelease(`${notes[3]}${octaves[3]}`, '8n', time) : null;
       // make sure index stays within bounds
+      console.log(index);
       if (index === row0.length - 1) index = 0
       else index ++;
     };

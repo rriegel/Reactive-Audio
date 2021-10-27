@@ -7,7 +7,14 @@ function SequencerRow({checked, row, boxToggle}) {
     <tr>
       {checked[row].map((boxValue, key) => {
         return (
-          <GridBox key={ key } i={ key } value={ boxValue } row={ row } boxToggle={ boxToggle } />
+          <GridBox
+            key={ key }
+            i={ key }
+            value={ boxValue }
+            row={ row }
+            boxToggle={ boxToggle }
+            highlight={ false }
+          />
         )
       })}
     </tr>
