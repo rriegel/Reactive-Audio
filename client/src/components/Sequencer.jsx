@@ -27,6 +27,7 @@ function Sequencer({ notes, octaves, BPM, isPlaying, checked, boxToggle }) {
             checked={ checked }
             row={ key }
             boxToggle={ boxToggle }
+            active={ active }
           />
         ))}
       </tbody>
