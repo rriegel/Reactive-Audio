@@ -1,6 +1,5 @@
 import React from 'react';
 import './GridBox.css';
-import * as Tone from 'tone';
 
 export default function GridBox({ i, value, row, boxToggle }) {
   return (
