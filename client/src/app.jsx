@@ -146,41 +146,70 @@ class App extends React.Component {
             BPM={ this.state.adjBPM }
             isPlaying={ this.state.isPlaying }
             checked={ this.state.checked }
-            boxToggle={ (row, index) => {this.boxToggle(row, index)} }
+            boxToggle={ (row, index) => this.boxToggle(row, index) }
           />
           <form className='form-wrapper'>
             <table>
               <tbody>
                 <tr>
                   <td className="input-box">
-                    <NoteSelect boxrow='0' note={this.state.notes[0]} changeNote={ (e) => this.changeNote(e) }/>
+                    <NoteSelect
+                      boxrow='0'
+                      note={ this.state.notes[0] }
+                      changeNote={ (e) => this.changeNote(e) }
+                    />
                   </td>
                   <td className="input-box">
-                    <OctaveSelect boxrow='0' octave={this.state.octaves[0]} changeOctave={ (e) => {this.changeOctave(e)}}/>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="input-box">
-                    <NoteSelect boxrow='1' note={this.state.notes[1]} changeNote={ (e) => this.changeNote(e) }/>
-                  </td>
-                  <td className="input-box">
-                    <OctaveSelect boxrow='1' octave={this.state.octaves[1]} changeOctave={ (e) => {this.changeOctave(e)}}/>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="input-box">
-                    <NoteSelect boxrow='2' note={this.state.notes[2]} changeNote={ (e) => this.changeNote(e) }/>
-                  </td>
-                  <td className="input-box">
-                    <OctaveSelect boxrow='2' octave={this.state.octaves[2]} changeOctave={ (e) => {this.changeOctave(e)}}/>
+                    <OctaveSelect
+                      boxrow='0'
+                      octave={ this.state.octaves[0] }
+                      changeOctave={ (e) => this.changeOctave(e) }
+                    />
                   </td>
                 </tr>
                 <tr>
                   <td className="input-box">
-                    <NoteSelect boxrow='3' note={this.state.notes[3]} changeNote={ (e) => this.changeNote(e) }/>
+                    <NoteSelect
+                      boxrow='1'
+                      note={ this.state.notes[1] }
+                      changeNote={ (e) => this.changeNote(e) }
+                    />
                   </td>
                   <td className="input-box">
-                    <OctaveSelect boxrow='3' octave={this.state.octaves[3]} changeOctave={ (e) => {this.changeOctave(e)}}/>
+                    <OctaveSelect
+                      boxrow='1'
+                      octave={ this.state.octaves[1] }
+                      changeOctave={ (e) => this.changeOctave(e) }
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="input-box">
+                    <NoteSelect
+                    boxrow='2'
+                    note={ this.state.notes[2] }
+                    changeNote={ (e) => this.changeNote(e) }/>
+                  </td>
+                  <td className="input-box">
+                    <OctaveSelect
+                      boxrow='2'
+                      octave={ this.state.octaves[2] }
+                      changeOctave={ (e) => this.changeOctave(e) }/>
+                  </td>
+                </tr>
+                <tr>
+                  <td className="input-box">
+                    <NoteSelect
+                      boxrow='3'
+                      note={ this.state.notes[3] }
+                      changeNote={ (e) => this.changeNote(e) }/>
+                  </td>
+                  <td className="input-box">
+                    <OctaveSelect
+                      boxrow='3'
+                      octave={ this.state.octaves[3] }
+                      changeOctave={ (e) => this.changeOctave(e) }
+                    />
                   </td>
                 </tr>
               </tbody>
@@ -188,9 +217,9 @@ class App extends React.Component {
           </form>
         </div>
         <SaveList
-          saves={this.state.savestates}
-          loadSave={(stateName) => { this.loadSave(stateName) }}
-          deleteSave={(stateName) => { this.deleteSave(stateName) }}
+          saves={ this.state.savestates }
+          loadSave={ (stateName) => this.loadSave(stateName) }
+          deleteSave={ (stateName) => this.deleteSave(stateName) }
         />
       </div>
     )
