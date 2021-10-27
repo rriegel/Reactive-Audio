@@ -154,15 +154,15 @@ class App extends React.Component {
             <table>
               <tbody>
                 {this.state.checked.map((row, key) => (
-                  <tr key={ key }>
-                    <td className="input-box">
+                  <tr className="input-row" key={ key }>
+                    <td>
                       <NoteSelect
                         boxrow={ key+"" }
                         note={ this.state.notes[key] }
                         changeNote={ (e) => this.changeNote(e) }
                       />
                     </td>
-                    <td className="input-box">
+                    <td>
                       <OctaveSelect
                         boxrow={ key+"" }
                         octave={ this.state.octaves[key] }

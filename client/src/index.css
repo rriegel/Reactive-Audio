@@ -43,20 +43,17 @@ code {
   display: flex;
   flex-direction: row;
 }
-.sequencer {
-  padding-top: 25px;
-}
 
 .form-wrapper {
   display: flex;
   flex-direction: column;
 }
-
-.input-box {
-  height: 125px;
+.input-row {
+  display: flex;
+  flex-direction: row;
+  height: 110px;
   width: 100px;
 }
-
 .save-state-entry {
   display: flex;
   flex-direction: row;
@@ -65,13 +62,6 @@ code {
   display: flex;
   flex-direction: column;
 }
-
-.background {
-  background-color: whitesmoke;
-  display: flex;
-  justify-content: center;
-}
-
 input {
   text-align: center;
 }
