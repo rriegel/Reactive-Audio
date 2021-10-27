@@ -2,7 +2,9 @@ import * as Tone from 'tone';
 
 const limiter = new Tone.Limiter(-20).toDestination();
 
-const sampler = new Tone.Sampler({
+const gainNode = new Tone.Gain(0.8).connect(limiter);
+
+const casio = new Tone.Sampler({
   urls: {
     A1: "A1.mp3",
     A2: "A2.mp3",
@@ -13,6 +15,19 @@ const sampler = new Tone.Sampler({
       isLoaded: true
     })
   }
-}).connect(limiter);
+}).connect(gainNode);
 
-export default sampler;
+const salamander = new Tone.Sampler({
+  urls: {
+    A1: "A1.mp3",
+    A2: "A2.mp3",
+  },
+  baseUrl: "https://tonejs.github.io/audio/salamander/",
+  onload: () => {
+    this.setState({
+      isLoaded: true
+    })
+  }
+}).connect(gainNode);
+
+export { casio, salamander };

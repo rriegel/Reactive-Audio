@@ -1,8 +1,10 @@
+import React, { useState } from 'react';
 import * as Tone from 'tone';
-import sampler from './sampler.js';
+import { casio, salamander } from './sampler.js';
 import StartAudioContext from "startaudiocontext";
 
 export default function togglePlay(notes, octaves, BPM, checked, setActive) {
+
   if (Tone.Transport.state === 'stopped') {
     const row0 = checked[0], row1 = checked[1], row2 = checked[2], row3 = checked[3];
     let index = 0;
@@ -11,11 +13,10 @@ export default function togglePlay(notes, octaves, BPM, checked, setActive) {
     const repeat = (time) => {
       let note = row0[index % row0.length];
       // trigger sampler to conditionally play note
-
-      row0[index] === 1 ? sampler.triggerAttackRelease(`${notes[0]}${octaves[0]}`, '8n', time) : null;
-      row1[index] === 1 ? sampler.triggerAttackRelease(`${notes[1]}${octaves[1]}`, '8n', time) : null;
-      row2[index] === 1 ? sampler.triggerAttackRelease(`${notes[2]}${octaves[2]}`, '8n', time) : null;
-      row3[index] === 1 ? sampler.triggerAttackRelease(`${notes[3]}${octaves[3]}`, '8n', time) : null;
+      row0[index] === 1 ? casio.triggerAttackRelease(`${notes[0]}${octaves[0]}`, '8n', time) : null;
+      row1[index] === 1 ? casio.triggerAttackRelease(`${notes[1]}${octaves[1]}`, '8n', time) : null;
+      row2[index] === 1 ? casio.triggerAttackRelease(`${notes[2]}${octaves[2]}`, '8n', time) : null;
+      row3[index] === 1 ? casio.triggerAttackRelease(`${notes[3]}${octaves[3]}`, '8n', time) : null;
       // make sure index stays within bounds
       setActive(index);
       if (index === row0.length - 1) index = 0
