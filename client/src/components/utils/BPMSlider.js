@@ -10,7 +10,7 @@ export default function BPMSlider({ def, name, current, changeBPM }) {
         {current} BPM
       </Typography>
       <Slider
-        key={`slider-${name + def}`}
+        key={`slider-${name}${def}`}
         defaultValue={def}
         valueLabelDisplay="auto"
         step={1}
