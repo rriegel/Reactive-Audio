@@ -3,7 +3,7 @@ import './Sequencer.css';
 import SequencerRow from './SequencerRow.jsx';
 import togglePlay from './utils/togglePlay.js';
 
-function Sequencer({ notes, octaves, BPM, isPlaying, checked, boxToggle }) {
+function Sequencer({ notes, octaves, BPM, isPlaying, checked, boxToggle, changeNote, changeOctave }) {
 
   const [active, setActive] = useState(null);
 
@@ -29,6 +29,10 @@ function Sequencer({ notes, octaves, BPM, isPlaying, checked, boxToggle }) {
             row={ key }
             boxToggle={ boxToggle }
             active={ active }
+            notes={ notes }
+            octaves={ octaves }
+            changeNote={ changeNote }
+            changeOctave={ changeOctave }
           />
         ))}
       </tbody>

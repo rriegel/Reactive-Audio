@@ -150,31 +150,9 @@ class App extends React.Component {
             isPlaying={ this.state.isPlaying }
             checked={ this.state.checked }
             boxToggle={ (row, index) => this.boxToggle(row, index) }
+            changeNote={ (e) => this.changeNote(e) }
+            changeOctave={ (e) => this.changeOctave(e) }
           />
-          <form>
-            <table>
-              <tbody>
-                {this.state.checked.map((row, key) => (
-                  <tr className="input-row" key={ key }>
-                    <td>
-                      <NoteSelect
-                        boxrow={ key+"" }
-                        note={ this.state.notes[key] }
-                        changeNote={ (e) => this.changeNote(e) }
-                      />
-                    </td>
-                    <td>
-                      <OctaveSelect
-                        boxrow={ key+"" }
-                        octave={ this.state.octaves[key] }
-                        changeOctave={ (e) => this.changeOctave(e) }
-                      />
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </form>
         </div>
         <SaveList
           saves={ this.state.savestates }
