@@ -1,17 +1,19 @@
 .box {
-  background-color: #FFFFFF;
-  border-style: solid;
-  border-color: #EFEFEF;
+  background-color: #cfc7c1;
+  transition: box-shadow 0.3s;
   width: 100px;
   height: 100px;
-  transition: box-shadow 0.3s;
+  border-radius: 1.5rem;
+  -moz-box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+  -webkit-box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+  box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
 }
 .box:hover {
-  box-shadow: 0 0 30px #5ED4F3;
+  box-shadow: 0 0 1rem 0.5rem #5ED4F3;
 }
 .clicked {
   background-color: #5ED4F3;
 }
 .active {
-  box-shadow: 0 0 50px #3cff4c;
+  box-shadow: 0 0 1.5rem 0.5rem #3cff4c;
 }
