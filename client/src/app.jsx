@@ -4,8 +4,6 @@ import * as Tone from 'tone';
 import Sequencer from './components/Sequencer.jsx';
 import SaveList from './components/SaveList.jsx';
 import axios from 'axios';
-import NoteSelect from './components/utils/NoteSelect.js';
-import OctaveSelect from './components/utils/OctaveSelect.js';
 import BPMSlider from './components/utils/BPMSlider.js';
 import NameInput from './components/utils/NameInput.js';
 
@@ -134,24 +132,21 @@ class App extends React.Component {
               saveProject={(e) => {this.saveState(e)}}
             />
           </div>
-          <BPMSlider
-            def={ this.state.BPM }
-            name={ this.state.name || "" }
-            current={ this.state.adjBPM }
-            changeBPM={(e) => this.changeBPM(e)}
-          />
         </div>
 
         <div className='sequencer-wrapper'>
           <Sequencer
             notes={ this.state.notes }
             octaves={ this.state.octaves }
-            BPM={ this.state.adjBPM }
+            name={ this.state.name || "" }
+            BPM={ this.state.BPM }
+            adjBPM={ this.state.adjBPM }
             isPlaying={ this.state.isPlaying }
             checked={ this.state.checked }
             boxToggle={ (row, index) => this.boxToggle(row, index) }
             changeNote={ (e) => this.changeNote(e) }
             changeOctave={ (e) => this.changeOctave(e) }
+            changeBPM={ (e) => this.changeBPM(e) }
           />
         </div>
         <SaveList
