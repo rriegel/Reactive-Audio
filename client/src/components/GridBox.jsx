@@ -13,8 +13,11 @@ export default function GridBox({ i, value, row, boxToggle, active }) {
   return (
     <td>
       <div
-        className={ boxClasses }
-        onClick={ () => { boxToggle(row, i) } }>
+        className="inset"
+        onClick={ () => { boxToggle(row, i) } }
+      >
+        <div className={ boxClasses }>
+        </div>
       </div>
     </td>
   )
