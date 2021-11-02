@@ -7,7 +7,7 @@ import Select from '@mui/material/Select';
 
 export default function OctaveSelect({ boxrow, octave, changeOctave }) {
   return (
-    <Box sx={{ minWidth: 50 }}>
+    <Box sx={{ minWidth: 100 }}>
     <FormControl fullWidth >
       <InputLabel>Octave</InputLabel>
       <Select
