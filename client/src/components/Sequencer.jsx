@@ -22,12 +22,19 @@ function Sequencer({ notes, octaves, name, BPM, adjBPM, isPlaying, checked, boxT
 
   return (
     <div className="sequencer">
-      <BPMSlider
-        def={ BPM }
-        name={ name }
-        current={ adjBPM }
-        changeBPM={ changeBPM }
-      />
+
+      <div className="top-info">
+        <BPMSlider
+          def={ BPM }
+          name={ name }
+          current={ adjBPM }
+          changeBPM={ changeBPM }
+        />
+        <h1 className="title">
+          Reactive Audio
+        </h1>
+      </div>
+
       <table>
         <tbody>
           {checked.map((row, key) => (

@@ -120,9 +120,6 @@ class App extends React.Component {
       <div className="App">
 
         <div className="menu-bar">
-          <h1 className="title">
-            Reactive Audio
-          </h1>
           <div className="top-buttons">
             <button onClick={ () => {this.toggleSequencer()} }>
               {this.state.isPlaying ? 'Stop' : 'Start'}

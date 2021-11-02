@@ -1,12 +1,6 @@
 input {
   text-align: center;
 }
-
-.title {
-  width: 20%;
-  margin: 0 auto;
-  font-size: 40px;
-}
 .top-buttons {
   display: flex;
   flex-direction: row;
