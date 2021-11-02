@@ -16,6 +16,7 @@ input {
 .sequencer-wrapper {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 .save-state-entry {
   display: flex;
