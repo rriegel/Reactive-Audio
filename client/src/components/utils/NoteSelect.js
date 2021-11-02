@@ -7,7 +7,7 @@ import Select from '@mui/material/Select';
 
 export default function NoteSelect({ boxrow, note, changeNote }) {
   return (
-    <Box sx={{ minWidth: 120 }}>
+    <Box sx={{ minWidth: 120}}>
     <FormControl fullWidth >
       <InputLabel>Note</InputLabel>
       <Select

@@ -1,0 +1,4 @@
+.selectors {
+  display: flex;
+  flex-direction: row;
+}

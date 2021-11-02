@@ -1,4 +1,5 @@
 import React from 'react';
+import './SequencerRow.css';
 import GridBox from './GridBox.jsx';
 import * as Tone from 'tone';
 import NoteSelect from './utils/NoteSelect.js';
@@ -19,16 +20,18 @@ function SequencerRow({checked, row, boxToggle, active, notes, octaves, changeNo
           />
         )
       })}
-      <NoteSelect
-        boxrow={ row+"" }
-        note={ notes[row] }
-        changeNote={ changeNote }
-      />
-      <OctaveSelect
-        boxrow={ row+"" }
-        octave={ octaves[row] }
-        changeOctave={ changeOctave }
-      />
+      <div className="selectors">
+        <NoteSelect
+          boxrow={ row+"" }
+          note={ notes[row] }
+          changeNote={ changeNote }
+        />
+        <OctaveSelect
+          boxrow={ row+"" }
+          octave={ octaves[row] }
+          changeOctave={ changeOctave }
+        />
+      </div>
     </tr>
   )
 };

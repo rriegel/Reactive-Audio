@@ -17,12 +17,6 @@ input {
   display: flex;
   flex-direction: row;
 }
-.input-row {
-  display: flex;
-  flex-direction: row;
-  height: 110px;
-  width: 100px;
-}
 .save-state-entry {
   display: flex;
   flex-direction: row;
