@@ -40,8 +40,16 @@ Delete a project from your list by pressing 'Delete'.
 
 ## 🔨 Technologies
 
-[![](https://img.shields.io/badge/ReactJS-61DAFB?logo=react&logoColor=white&style=for-the-badge)](https://reactjs.org/)
-[![](https://img.shields.io/badge/Node.js-43853D?logo=node.js&logoColor=white&style=for-the-badge)](https://nodejs.org/)
-[![](https://img.shields.io/badge/Express-FFFFFF?logo=express&logoColor=black&style=for-the-badge)](https://expressjs.com/)
-[![](https://img.shields.io/badge/MongoDB-439543?logo=mongodb&logoColor=white&style=for-the-badge)](https://www.mongodb.com/)
-[![](https://img.shields.io/badge/tone.js-F734D7?style=for-the-badge)](https://tonejs.github.io/)
+![MUI][(https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=material-ui&logoColor=white)](https://mui.com/)
+[![React](https://img.shields.io/badge/ReactJS-61DAFB?logo=react&logoColor=white&style=for-the-badge)](https://reactjs.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-43853D?logo=node.js&logoColor=white&style=for-the-badge)](https://nodejs.org/)
+[![ExpressJS](https://img.shields.io/badge/Express-FFFFFF?logo=express&logoColor=black&style=for-the-badge)](https://expressjs.com/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-439543?logo=mongodb&logoColor=white&style=for-the-badge)](https://www.mongodb.com/)
+[![tone.js](https://img.shields.io/badge/tone.js-F734D7?style=for-the-badge)](https://tonejs.github.io/)
+
+## 🖼 UI Previews
+
+![Select sequencer pads](https://github.com/rriegel/Reactive-Audio/blob/main/assets/UI1.gif)
+![Play the sequencer](https://github.com/rriegel/Reactive-Audio/blob/main/assets/UI2.gif)
+![Edit note values](https://github.com/rriegel/Reactive-Audio/blob/main/assets/UI3.gif)
+![Save your project](https://github.com/rriegel/Reactive-Audio/blob/main/assets/UI4.gif)
