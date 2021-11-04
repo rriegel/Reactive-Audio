@@ -20,16 +20,15 @@ export default function SaveList({ saves, loadSave, deleteSave }) {
       <Paper style={ {maxHeight: 400, minWidth: 250, overflow: 'auto'} }>
         <List >
           {saves.length ? saves.map((name, key) =>
-            <>
+            <div key={ key }>
               <ListItem
-                key={ key }
                 secondaryAction={
                   <>
                     <IconButton
                       aria-label="load"
                       onClick={ () => loadSave(name) }
                     >
-                      <FolderIcon/>
+                      <FolderIcon />
                     </IconButton>
                     <IconButton
                       aria-label="delete"
@@ -43,7 +42,7 @@ export default function SaveList({ saves, loadSave, deleteSave }) {
                 <ListItemText primary={ name }/>
               </ListItem>
               <Divider />
-            </>
+            </div>
             ) :
             <ListItem>
               <ListItemText primary="No saved projects"/>
