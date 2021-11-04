@@ -134,7 +134,11 @@ class App extends React.Component {
             changeOctave={ (e) => this.changeOctave(e) }
             changeBPM={ (e) => this.changeBPM(e) }
           />
-          <SaveList2/>
+          <SaveList2
+            saves={ this.state.savestates }
+            loadSave={ (stateName) => this.loadSave(stateName) }
+            deleteSave={ (stateName) => this.deleteSave(stateName) }
+          />
         </div>
         <SaveList
           saves={ this.state.savestates }

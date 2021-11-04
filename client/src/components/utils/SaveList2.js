@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
@@ -10,7 +11,7 @@ import IconButton from '@mui/material/IconButton';
 import FolderIcon from '@mui/icons-material/Folder';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-export default function SaveList2() {
+export default function SaveList2({saves, loadSave, deleteSave}) {
 
   const generate = (element) => {
     return [0, 1, 2].map((value) =>
@@ -22,6 +23,9 @@ export default function SaveList2() {
 
   return (
     <Paper style={{maxHeight: 520, minWidth: 200, overflow: 'auto'}}>
+      <Typography>
+        Saved Projects
+      </Typography>
       <List dense={true}>
         { generate (
           <ListItem
