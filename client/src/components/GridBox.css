@@ -10,7 +10,7 @@
 .inset {
   background-color: #cfc7c1;
   border-radius: 1.5rem;
-  box-shadow: inset 2px 2px 5px #9a938c, 1px 1px 5px #ffffff;
+  box-shadow: inset 2px 2px 5px #9A938C, 1px 1px 5px #FFFFFF;
 }
 .clicked {
   background-color: #5ED4F3;
