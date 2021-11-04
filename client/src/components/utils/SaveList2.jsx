@@ -1,5 +1,6 @@
 import React from 'react';
-import { styled } from '@mui/material/styles';
+// import { styled } from '@mui/material/styles';
+import Paper from '@mui/material/Paper';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
@@ -19,32 +20,30 @@ export default function SaveList2() {
     );
   };
 
-  const Demo = styled('div')(({ theme }) => ({
-    backgroundColor: theme.palette.background.paper,
-  }));
-
   return (
-    <List dense={dense}>
-      { generate (
-        <ListItem
-          secondaryAction={
-            <IconButton edge="end" aria-label="delete">
-              <DeleteIcon />
-            </IconButton>
-          }
-        >
-          <ListItemAvatar>
-            <Avatar>
-              <FolderIcon />
-            </Avatar>
-          </ListItemAvatar>
-          <ListItemText
-            primary="Single-line item"
-            secondary={secondary ? 'Secondary text' : null}
-          />
-        </ListItem>,
-      )}
-    </List>
+    <Paper style={{maxHeight: 200, overflow: 'auto'}}>
+      <List dense={dense}>
+        { generate (
+          <ListItem
+            secondaryAction={
+              <IconButton edge="end" aria-label="delete">
+                <DeleteIcon />
+              </IconButton>
+            }
+          >
+            <ListItemAvatar>
+              <Avatar>
+                <FolderIcon />
+              </Avatar>
+            </ListItemAvatar>
+            <ListItemText
+              primary="Single-line item"
+            />
+          </ListItem>,
+        )}
+      </List>
+    </Paper>
+
   )
 };
 
