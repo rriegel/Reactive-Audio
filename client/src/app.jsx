@@ -2,8 +2,7 @@ import React from 'react';
 import './app.css';
 import * as Tone from 'tone';
 import Sequencer from './components/Sequencer.jsx';
-import SaveList from './components/SaveList.jsx';
-import SaveList2 from './components/utils/SaveList2.js';
+import SaveList from './components/utils/SaveList.js';
 import axios from 'axios';
 import BPMSlider from './components/utils/BPMSlider.js';
 import NameInput from './components/utils/NameInput.js';
@@ -134,17 +133,12 @@ class App extends React.Component {
             changeOctave={ (e) => this.changeOctave(e) }
             changeBPM={ (e) => this.changeBPM(e) }
           />
-          <SaveList2
+          <SaveList
             saves={ this.state.savestates }
             loadSave={ (stateName) => this.loadSave(stateName) }
             deleteSave={ (stateName) => this.deleteSave(stateName) }
           />
         </div>
-        <SaveList
-          saves={ this.state.savestates }
-          loadSave={ (stateName) => this.loadSave(stateName) }
-          deleteSave={ (stateName) => this.deleteSave(stateName) }
-        />
       </div>
     )
   }
