@@ -1,5 +1,5 @@
 import React from 'react';
-// import { styled } from '@mui/material/styles';
+
 import Paper from '@mui/material/Paper';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -21,8 +21,8 @@ export default function SaveList2() {
   };
 
   return (
-    <Paper style={{maxHeight: 200, overflow: 'auto'}}>
-      <List dense={dense}>
+    <Paper style={{maxHeight: 200, minWidth: 200, overflow: 'auto'}}>
+      <List dense={true}>
         { generate (
           <ListItem
             secondaryAction={

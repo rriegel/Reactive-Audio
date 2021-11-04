@@ -3,6 +3,7 @@ import './app.css';
 import * as Tone from 'tone';
 import Sequencer from './components/Sequencer.jsx';
 import SaveList from './components/SaveList.jsx';
+import SaveList2 from './components/utils/SaveList2.js';
 import axios from 'axios';
 import BPMSlider from './components/utils/BPMSlider.js';
 import NameInput from './components/utils/NameInput.js';
@@ -133,6 +134,7 @@ class App extends React.Component {
             changeOctave={ (e) => this.changeOctave(e) }
             changeBPM={ (e) => this.changeBPM(e) }
           />
+          <SaveList2/>
         </div>
         <SaveList
           saves={ this.state.savestates }
