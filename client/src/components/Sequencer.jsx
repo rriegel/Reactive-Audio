@@ -5,6 +5,10 @@ import BPMSlider from './utils/BPMSlider.js';
 import togglePlay from './utils/togglePlay.js';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import StopIcon from '@mui/icons-material/Stop';
+import {
+  createTheme,
+  ThemeProvider as MuiThemeProvider,
+} from '@mui/material/styles';
 
 function Sequencer({ notes, octaves, name, BPM, adjBPM, pattern, boxToggle, changeNote, changeOctave, changeBPM }) {
 
@@ -27,21 +31,25 @@ function Sequencer({ notes, octaves, name, BPM, adjBPM, pattern, boxToggle, chan
     <div className="sequencer">
 
       <div className="top-info">
+        <div
+          className="item"
+          onClick={ () => {toggleSequencer(!isPlaying)} }
+        >
+          {isPlaying ?
+            <StopIcon style={{height: 60, width: 60}} className="icon"/> :
+            <PlayArrowIcon style={{height: 60, width: 60}} className="icon"/>
+          }
+        </div>
+        <h1 className="title item">
+          Reactive Audio
+        </h1>
         <BPMSlider
+          className="item"
           def={ BPM }
           name={ name }
           current={ adjBPM }
           changeBPM={ changeBPM }
         />
-        <div onClick={ () => {toggleSequencer(!isPlaying)} }>
-          {isPlaying ?
-            <StopIcon sx={{height: 60, width: 60}} className="icon"/> :
-            <PlayArrowIcon sx={{height: 60, width: 60}} className="icon"/>
-          }
-        </div>
-        <h1 className="title">
-          Reactive Audio
-        </h1>
       </div>
 
       <table>

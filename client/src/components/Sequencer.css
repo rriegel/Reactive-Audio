@@ -1,10 +1,14 @@
 .title {
-  font-size: 2rem;
+  color: #282C34;
+  font-size: 1rem;
 }
 .top-info {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+.item {
+  width: 10rem;
 }
 .sequencer {
   justify-content: center;
@@ -14,11 +18,12 @@
   box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
 }
 .icon {
+  transition: background-color 0.3s;
+  color: #1A76D2;
   height: 100px;
   border-radius: 50%;
   cursor: pointer;
-  transition: box-shadow 0.3s;
 }
 .icon:hover {
-  box-shadow: 0 0 1rem 0.5rem #5ED4F3;
+  background-color: #c3d5e9;
 }
