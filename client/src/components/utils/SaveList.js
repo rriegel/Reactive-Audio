@@ -19,7 +19,7 @@ export default function SaveList({saves, loadSave, deleteSave}) {
       <Typography>My Projects</Typography>
       <Paper style={{maxHeight: 400, minWidth: 250, overflow: 'auto'}}>
         <List >
-          { saves.map((name, key) =>
+          { saves.length ? saves.map((name, key) =>
             <ListItem
               key={ key }
               secondaryAction={
@@ -40,8 +40,12 @@ export default function SaveList({saves, loadSave, deleteSave}) {
               }
             >
               <ListItemText primary={ name }/>
-            </ListItem>,
-          )}
+            </ListItem>
+            ) :
+            <ListItem>
+              <ListItemText primary="No saved projects"/>
+            </ListItem>
+          }
         </List>
       </Paper>
     </div>
