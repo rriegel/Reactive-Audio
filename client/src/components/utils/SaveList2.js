@@ -21,7 +21,7 @@ export default function SaveList2() {
   };
 
   return (
-    <Paper style={{maxHeight: 200, minWidth: 200, overflow: 'auto'}}>
+    <Paper style={{maxHeight: 520, minWidth: 200, overflow: 'auto'}}>
       <List dense={true}>
         { generate (
           <ListItem
