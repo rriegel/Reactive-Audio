@@ -6,7 +6,7 @@ import Slider from '@mui/material/Slider';
 export default function BPMSlider({ def, name, current, changeBPM }) {
   return (
     <Box sx={{ width: 300 }}>
-      <Typography id="non-linear-slider" gutterBottom>
+      <Typography>
         {current} BPM
       </Typography>
       <Slider
