@@ -5,10 +5,10 @@ import * as Tone from 'tone';
 import NoteSelect from './utils/NoteSelect.js';
 import OctaveSelect from './utils/OctaveSelect.js';
 
-function SequencerRow({checked, row, boxToggle, active, notes, octaves, changeNote, changeOctave}) {
+function SequencerRow({pattern, row, boxToggle, active, notes, octaves, changeNote, changeOctave}) {
   return (
     <tr>
-      {checked[row].map((boxValue, key) => {
+      {pattern[row].map((boxValue, key) => {
         return (
           <GridBox
             key={ key }

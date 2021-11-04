@@ -3,10 +3,10 @@ import * as Tone from 'tone';
 import { casio, salamander } from './sampler.js';
 import StartAudioContext from "startaudiocontext";
 
-export default function togglePlay(notes, octaves, BPM, checked, setActive) {
+export default function togglePlay(notes, octaves, BPM, pattern, setActive) {
 
   if (Tone.Transport.state === 'stopped') {
-    const row0 = checked[0], row1 = checked[1], row2 = checked[2], row3 = checked[3];
+    const row0 = pattern[0], row1 = pattern[1], row2 = pattern[2], row3 = pattern[3];
     let index = 0;
     let speed = '8n';
 

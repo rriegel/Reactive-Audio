@@ -4,7 +4,7 @@ import SequencerRow from './SequencerRow.jsx';
 import BPMSlider from './utils/BPMSlider.js';
 import togglePlay from './utils/togglePlay.js';
 
-function Sequencer({ notes, octaves, name, BPM, adjBPM, isPlaying, checked, boxToggle, changeNote, changeOctave, changeBPM }) {
+function Sequencer({ notes, octaves, name, BPM, adjBPM, isPlaying, pattern, boxToggle, changeNote, changeOctave, changeBPM }) {
 
   const [active, setActive] = useState(null);
 
@@ -16,7 +16,7 @@ function Sequencer({ notes, octaves, name, BPM, adjBPM, isPlaying, checked, boxT
   const prevPlaying = usePrevious(isPlaying);
   useEffect(() => {
     if (prevPlaying !== undefined && isPlaying !== prevPlaying) {
-      togglePlay(notes, octaves, adjBPM, checked, setActive);
+      togglePlay(notes, octaves, adjBPM, pattern, setActive);
     }
   }, [isPlaying]);
 
@@ -37,10 +37,10 @@ function Sequencer({ notes, octaves, name, BPM, adjBPM, isPlaying, checked, boxT
 
       <table>
         <tbody>
-          {checked.map((row, key) => (
+          {pattern.map((row, key) => (
             <SequencerRow
               key={ key }
-              checked={ checked }
+              pattern={ pattern }
               row={ key }
               boxToggle={ boxToggle }
               active={ active }

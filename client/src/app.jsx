@@ -18,7 +18,7 @@ class App extends React.Component {
     this.state = {
       isPlaying: false,
       name: null,
-      checked: [
+      pattern: [
         [0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0],
@@ -40,7 +40,7 @@ class App extends React.Component {
     .then(res => {
       this.setState({
         name: res.data[0].name,
-        checked: res.data[0].pattern,
+        pattern: res.data[0].pattern,
         notes: res.data[0].notes,
         octaves: res.data[0].octaves,
         BPM: res.data[0].BPM,
@@ -58,7 +58,7 @@ class App extends React.Component {
     let nameValue = e;
     let data = {
       name: nameValue,
-      pattern: this.state.checked,
+      pattern: this.state.pattern,
       notes: this.state.notes,
       octaves: this.state.octaves,
       BPM: this.state.adjBPM
@@ -91,10 +91,10 @@ class App extends React.Component {
   }
 
   boxToggle(row, index) {
-    let newBoxToggle = this.state.checked;
+    let newBoxToggle = this.state.pattern;
     newBoxToggle[row][index] = newBoxToggle[row][index] === 0 ? 1 : 0;
     this.setState({
-      checked: newBoxToggle
+      pattern: newBoxToggle
     })
   }
   changeNote(e) {
@@ -139,7 +139,7 @@ class App extends React.Component {
             BPM={ this.state.BPM }
             adjBPM={ this.state.adjBPM }
             isPlaying={ this.state.isPlaying }
-            checked={ this.state.checked }
+            pattern={ this.state.pattern }
             boxToggle={ (row, index) => this.boxToggle(row, index) }
             changeNote={ (e) => this.changeNote(e) }
             changeOctave={ (e) => this.changeOctave(e) }
