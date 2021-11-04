@@ -25,8 +25,8 @@ export default function SaveList({saves, loadSave, deleteSave}) {
               secondaryAction={
                 <>
                   <IconButton
-                  aria-label="load"
-                  onClick={ () => loadSave(name) }
+                    aria-label="load"
+                    onClick={ () => loadSave(name) }
                   >
                     <FolderIcon/>
                   </IconButton>
