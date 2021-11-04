@@ -5,10 +5,6 @@ import BPMSlider from './utils/BPMSlider.js';
 import togglePlay from './utils/togglePlay.js';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import StopIcon from '@mui/icons-material/Stop';
-import {
-  createTheme,
-  ThemeProvider as MuiThemeProvider,
-} from '@mui/material/styles';
 
 function Sequencer({ notes, octaves, name, BPM, adjBPM, pattern, boxToggle, changeNote, changeOctave, changeBPM }) {
 
