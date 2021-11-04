@@ -20,7 +20,7 @@ function SequencerRow({pattern, row, boxToggle, active, notes, octaves, changeNo
           />
         )
       })}
-      <div className="selectors">
+      <td className="selectors">
         <NoteSelect
           boxrow={ row+"" }
           note={ notes[row] }
@@ -31,7 +31,7 @@ function SequencerRow({pattern, row, boxToggle, active, notes, octaves, changeNo
           octave={ octaves[row] }
           changeOctave={ changeOctave }
         />
-      </div>
+      </td>
     </tr>
   )
 };

@@ -4,10 +4,11 @@ import SequencerRow from './SequencerRow.jsx';
 import BPMSlider from './utils/BPMSlider.js';
 import togglePlay from './utils/togglePlay.js';
 
-function Sequencer({ notes, octaves, name, BPM, adjBPM, isPlaying, pattern, boxToggle, changeNote, changeOctave, changeBPM }) {
+function Sequencer({ notes, octaves, name, BPM, adjBPM, pattern, boxToggle, changeNote, changeOctave, changeBPM }) {
+
+  const [isPlaying, toggleSequencer] = useState(false);
 
   const [active, setActive] = useState(null);
-
   const usePrevious = (val) => {
     const ref = useRef();
     useEffect(() => ref.current = val);
@@ -30,6 +31,9 @@ function Sequencer({ notes, octaves, name, BPM, adjBPM, isPlaying, pattern, boxT
           current={ adjBPM }
           changeBPM={ changeBPM }
         />
+        <button onClick={ () => {toggleSequencer(!isPlaying)} }>
+          {isPlaying ? 'Stop' : 'Start'}
+        </button>
         <h1 className="title">
           Reactive Audio
         </h1>

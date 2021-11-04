@@ -16,7 +16,6 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      isPlaying: false,
       name: null,
       pattern: [
         [0, 0, 0, 0, 0, 0, 0, 0],
@@ -31,7 +30,6 @@ class App extends React.Component {
       adjBPM: 120
     };
 
-    this.toggleSequencer = this.toggleSequencer.bind(this);
     this.changeNote = this.changeNote.bind(this);
   }
 
@@ -84,12 +82,6 @@ class App extends React.Component {
     this.getSaveData();
   }
 
-  toggleSequencer() {
-    this.setState(prevState => ({
-      isPlaying: !prevState.isPlaying
-    }));
-  }
-
   boxToggle(row, index) {
     let newBoxToggle = this.state.pattern;
     newBoxToggle[row][index] = newBoxToggle[row][index] === 0 ? 1 : 0;
@@ -121,9 +113,6 @@ class App extends React.Component {
 
         <div className="menu-bar">
           <div className="top-buttons">
-            <button onClick={ () => {this.toggleSequencer()} }>
-              {this.state.isPlaying ? 'Stop' : 'Start'}
-            </button>
             <NameInput
               projectList = { this.state.savestates }
               saveProject={(e) => {this.saveState(e)}}
@@ -138,7 +127,6 @@ class App extends React.Component {
             name={ this.state.name || "" }
             BPM={ this.state.BPM }
             adjBPM={ this.state.adjBPM }
-            isPlaying={ this.state.isPlaying }
             pattern={ this.state.pattern }
             boxToggle={ (row, index) => this.boxToggle(row, index) }
             changeNote={ (e) => this.changeNote(e) }
