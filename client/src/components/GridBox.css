@@ -1,6 +1,6 @@
 .box {
-  width: 6rem;
-  height: 6rem;
+  width: 5rem;
+  height: 5rem;
   border-radius: 1.5rem;
   transition: box-shadow 0.3s;
 }
