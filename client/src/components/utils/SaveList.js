@@ -17,7 +17,7 @@ export default function SaveList({saves, loadSave, deleteSave}) {
   return (
     <div className="sidebar">
       <Typography>My Projects</Typography>
-      <Paper style={{maxHeight: 520, minWidth: 250, overflow: 'auto'}}>
+      <Paper style={{maxHeight: 400, minWidth: 250, overflow: 'auto'}}>
         <List >
           { saves.map((name, key) =>
             <ListItem
