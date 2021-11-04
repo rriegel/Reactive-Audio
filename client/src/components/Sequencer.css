@@ -5,7 +5,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  line-height: 0;
 }
 .sequencer {
   justify-content: center;
@@ -13,4 +12,13 @@
   border-radius: 1rem;
   background-color: #e6e3df;
   box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+}
+.icon {
+  height: 100px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+.icon:hover {
+  box-shadow: 0 0 1rem 0.5rem #5ED4F3;
 }

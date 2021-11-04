@@ -35,8 +35,8 @@ function Sequencer({ notes, octaves, name, BPM, adjBPM, pattern, boxToggle, chan
         />
         <div onClick={ () => {toggleSequencer(!isPlaying)} }>
           {isPlaying ?
-            <StopIcon className="icon stop"/> :
-            <PlayArrowIcon className="icon play"/>
+            <StopIcon sx={{height: 60, width: 60}} className="icon"/> :
+            <PlayArrowIcon sx={{height: 60, width: 60}} className="icon"/>
           }
         </div>
         <h1 className="title">
