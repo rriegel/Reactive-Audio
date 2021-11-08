@@ -27,13 +27,18 @@ function Sequencer({ notes, octaves, name, BPM, adjBPM, pattern, boxToggle, chan
     <div className="sequencer">
 
       <div className="top-info">
-        <div
-          className="item"
-          onClick={ () => {toggleSequencer(!isPlaying)} }
-        >
+        <div className="item">
           {isPlaying ?
-            <StopIcon style={{height: 60, width: 60}} className="icon"/> :
-            <PlayArrowIcon style={{height: 60, width: 60}} className="icon"/>
+            <StopIcon
+              style={{height: 60, width: 60}}
+              className="icon"
+              onClick={ () => {toggleSequencer(!isPlaying)} }
+            /> :
+            <PlayArrowIcon
+              style={{height: 60, width: 60}}
+              className="icon"
+              onClick={ () => {toggleSequencer(!isPlaying)} }
+            />
           }
         </div>
         <h1 className="title item">
