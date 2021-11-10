@@ -1,10 +1,9 @@
 const express = require('express');
-const bodyparser = require('body-parser');
 const axios = require('axios');
 const db = require('./db');
 const SaveState = require('./db/models/saveState.js');
 const app = express();
-app.use(bodyparser.json());
+app.use(express.json());
 app.use(express.static('client/public'));
 
 app.get('/savestates', function (req, res) {
