@@ -4,7 +4,6 @@ const axios = require('axios');
 const db = require('./db');
 const SaveState = require('./db/models/saveState.js');
 const app = express();
-require('dotenv').config();
 app.use(bodyparser.json());
 app.use(express.static('client/public'));
 

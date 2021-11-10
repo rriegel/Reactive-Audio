@@ -5,7 +5,6 @@ const mongoURI = 'mongodb://localhost:27017/MVP-audio';
 const db = mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useCreateIndex: true
 });
 
 db
