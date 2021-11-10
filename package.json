@@ -37,7 +37,7 @@
     "react-icons": "^4.2.0",
     "startaudiocontext": "^1.2.1",
     "tone": "^14.7.77",
-    "webpack": "^4.46.0",
+    "webpack": "^5.63.0",
     "webpack-cli": "^4.7.0"
   },
   "devDependencies": {
