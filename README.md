@@ -3,8 +3,8 @@
 ## 🎹 Create simple melody patterns with piano notes
 ### 🤔 Save and load your projects to build inspiration
 
-![Header](https://github.com/rriegel/Reactive-Audio/blob/main/assets/screenshot-11042021.png)
-Screenshot of UI last updated 11/04/2021
+![Header](https://github.com/rriegel/Reactive-Audio/blob/main/assets/screenshot-11092021.png)
+Screenshot of UI last updated 11/09/2021
 
 # HOW TO USE:
 
