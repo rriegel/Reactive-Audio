@@ -8,22 +8,22 @@ import Select from '@mui/material/Select';
 export default function OctaveSelect({ boxrow, octave, changeOctave }) {
   return (
     <Box sx={{ minWidth: 100 }}>
-    <FormControl fullWidth >
-      <InputLabel>Octave</InputLabel>
-      <Select
-        value={ octave }
-        inputProps={{ name : boxrow }}
-        onChange={ (e) => changeOctave(e) }
-      >
-        <MenuItem value={0}>0</MenuItem>
-        <MenuItem value={1}>1</MenuItem>
-        <MenuItem value={2}>2</MenuItem>
-        <MenuItem value={3}>3</MenuItem>
-        <MenuItem value={4}>4</MenuItem>
-        <MenuItem value={5}>5</MenuItem>
-        <MenuItem value={6}>6</MenuItem>
-      </Select>
-    </FormControl>
-  </Box>
-  )
-};
+      <FormControl fullWidth>
+        <InputLabel>Octave</InputLabel>
+        <Select
+          value={octave}
+          inputProps={{ name: boxrow }}
+          onChange={(e) => changeOctave(e)}
+        >
+          <MenuItem value={0}>0</MenuItem>
+          <MenuItem value={1}>1</MenuItem>
+          <MenuItem value={2}>2</MenuItem>
+          <MenuItem value={3}>3</MenuItem>
+          <MenuItem value={4}>4</MenuItem>
+          <MenuItem value={5}>5</MenuItem>
+          <MenuItem value={6}>6</MenuItem>
+        </Select>
+      </FormControl>
+    </Box>
+  );
+}

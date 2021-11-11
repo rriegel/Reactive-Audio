@@ -2,7 +2,9 @@ import React from 'react';
 import './GridBox.css';
 import classNames from 'classnames';
 
-export default function GridBox({ i, value, row, boxToggle, active, }) {
+export default function GridBox({
+  i, value, row, boxToggle, active,
+}) {
   const boxClasses = classNames({
     box: true,
     clicked: value === 1,
@@ -19,4 +21,4 @@ export default function GridBox({ i, value, row, boxToggle, active, }) {
       </div>
     </td>
   );
-};
+}

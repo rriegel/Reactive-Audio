@@ -15,39 +15,40 @@ export default function SaveList({ saves, loadSave, deleteSave }) {
   return (
     <div className="sidebar">
       <Typography>My Projects</Typography>
-      <Paper style={ {maxHeight: 400, minWidth: 250, overflow: 'auto'} }>
-        <List >
-          {saves.length ? saves.map((name, key) =>
-            <div key={ key }>
+      <Paper style={{ maxHeight: 400, minWidth: 250, overflow: 'auto' }}>
+        <List>
+          {saves.length ? saves.map((name, key) => (
+            <div key={key}>
               <ListItem
-                secondaryAction={
+                secondaryAction={(
                   <>
                     <IconButton
                       aria-label="load"
-                      onClick={ () => loadSave(name) }
+                      onClick={() => loadSave(name)}
                     >
                       <FolderIcon />
                     </IconButton>
                     <IconButton
                       aria-label="delete"
-                      onClick={ () => deleteSave(name) }
+                      onClick={() => deleteSave(name)}
                     >
                       <DeleteIcon />
                     </IconButton>
                   </>
-                }
+                )}
               >
-                <ListItemText primary={ name }/>
+                <ListItemText primary={name} />
               </ListItem>
               <Divider />
             </div>
-            ) :
-            <ListItem>
-              <ListItemText primary="No saved projects"/>
-            </ListItem>
-          }
+          ))
+            : (
+              <ListItem>
+                <ListItemText primary="No saved projects" />
+              </ListItem>
+            )}
         </List>
       </Paper>
     </div>
-  )
-};
+  );
+}

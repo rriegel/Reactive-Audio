@@ -3,11 +3,14 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Slider from '@mui/material/Slider';
 
-export default function BPMSlider({ def, name, current, changeBPM }) {
+export default function BPMSlider({
+  def, name, current, changeBPM,
+}) {
   return (
     <Box sx={{ width: 200 }}>
       <Typography>
-        {current} BPM
+        {current}
+        BPM
       </Typography>
       <Slider
         key={`slider-${name}${def}`}
@@ -16,8 +19,8 @@ export default function BPMSlider({ def, name, current, changeBPM }) {
         step={1}
         min={50}
         max={200}
-        onChange={ (e) => changeBPM(e) }
+        onChange={(e) => changeBPM(e)}
       />
     </Box>
-  )
-};
+  );
+}
