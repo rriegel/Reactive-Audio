@@ -4,16 +4,8 @@ import GridBox from './GridBox';
 import NoteSelect from './utils/NoteSelect';
 import OctaveSelect from './utils/OctaveSelect';
 
-function SequencerRow({
-  pattern,
-  row,
-  boxToggle,
-  active,
-  notes,
-  octaves,
-  changeNote,
-  changeOctave,
-}) {
+// eslint-disable-next-line max-len
+function SequencerRow({ pattern, row, boxToggle, active, notes, octaves, changeNote, changeOctave }) {
   return (
     <tr>
       {pattern[row].map((boxValue, key) => (

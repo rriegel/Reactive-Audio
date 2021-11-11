@@ -6,18 +6,8 @@ import SequencerRow from './SequencerRow';
 import BPMSlider from './utils/BPMSlider';
 import togglePlay from './utils/togglePlay';
 
-function Sequencer({
-  notes,
-  octaves,
-  name,
-  BPM,
-  adjBPM,
-  pattern,
-  boxToggle,
-  changeNote,
-  changeOctave,
-  changeBPM,
-}) {
+// eslint-disable-next-line max-len
+function Sequencer({ notes, octaves, name, BPM, adjBPM, pattern, boxToggle, changeNote, changeOctave, changeBPM }) {
   const [isPlaying, toggleSequencer] = useState(false);
 
   const [active, setActive] = useState(null);

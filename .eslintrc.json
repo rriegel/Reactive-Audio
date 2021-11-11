@@ -39,6 +39,7 @@
     "react/display-name": 1,
     "react/destructuring-assignment": "off",
     "react/function-component-definition": "off",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "object-curly-newline": "off"
   }
 }
