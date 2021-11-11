@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Sequencer.css';
-import SequencerRow from './SequencerRow.jsx';
-import BPMSlider from './utils/BPMSlider.js';
-import togglePlay from './utils/togglePlay.js';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import StopIcon from '@mui/icons-material/Stop';
+import SequencerRow from './SequencerRow';
+import BPMSlider from './utils/BPMSlider';
+import togglePlay from './utils/togglePlay';
 
 function Sequencer({ notes, octaves, name, BPM, adjBPM, pattern, boxToggle, changeNote, changeOctave, changeBPM }) {
 
