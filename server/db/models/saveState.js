@@ -12,6 +12,6 @@ const saveSchema = new mongoose.Schema({
   BPM: { type: Number, default: 120, required: true },
 });
 
-const SaveState = mongoose.model('Save', saveSchema);
+const SaveState = mongoose.model('Save', saveSchema, 'saves');
 
 module.exports = SaveState;

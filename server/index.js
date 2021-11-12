@@ -1,46 +1,34 @@
 /* eslint-disable no-console */
 const express = require('express');
-// eslint-disable-next-line no-unused-vars
-const db = require('./db');
-const SaveState = require('./db/models/saveState');
+const session = require('express-session');
+const passport = require('passport');
+const connectEnsureLogin = require('connect-ensure-login');
+const User = require('./db/models/user');
 
 const app = express();
+
+const savestates = require('./routes/savestates');
+// const login = require('./routes/login');
+
 app.use(express.json());
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(express.static('client/public'));
 
-app.get('/savestates', (req, res) => {
-  SaveState.find()
-    .then((response) => res.status(200).send(response))
-    .catch((error) => res.status(404).send(error));
-});
-app.get('/savestates/:name', (req, res) => {
-  SaveState.find({ name: req.params.name })
-    .then((response) => res.status(200).send(response))
-    .catch((error) => res.status(404).send(error));
-});
-app.delete('/savestates/:name', (req, res) => {
-  SaveState.deleteOne({ name: req.params.name })
-    .then((response) => res.status(200).send(response))
-    .catch((error) => res.status(404).send(error));
-});
+app.use(session({
+  secret: 'r8q,+&1LM3)CD*zAGpx1xm{NeQhc;#',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { maxAge: 60 * 60 * 1000 }, // 1 hour
+}));
+// Passport Local Strategy
+passport.use(User.createStrategy());
+// To use with sessions
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
-app.post('/savestates', (req, res) => {
-  SaveState
-    .updateOne(
-      { name: req.body.name },
-      {
-        name: req.body.name,
-        pattern: req.body.pattern,
-        notes: req.body.notes,
-        octaves: req.body.octaves,
-        BPM: req.body.BPM,
-      },
-
-      { upsert: true },
-    )
-    .then(() => res.status(200).send('Save Successful'))
-    .catch((error) => res.status(404).send(error));
-});
+// routes
+app.use('/savestates', savestates);
 
 const PORT = 8001;
 
